@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem 'C:\\\\Users\\\\Lima Barreto\\\\Documents\\\\max\\\\claude\\\\sdwhub-lps\\\\assets' | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB,1\\)}} | Format-Table -AutoSize)"
+    ]
+  }
+}

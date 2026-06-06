@@ -1,0 +1,169 @@
+/* ============================================================
+   SDW.hub — Santos Digital Week
+   Foundations: color + type + spacing + elevation
+   Font: Poppins (display + sans) — self-hosted brand files.
+   This @import pulls in the @font-face rules; adjust the path
+   if importing from a different depth.
+   ============================================================ */
+@import url("fonts/poppins.css");
+
+:root {
+  /* ---- Brand palette (SDW.hub 2026) ---- */
+  --color-brand-cream:        #f0c68c;  /* warm gold — primary accent / "hub" */
+  --color-brand-cyan:         #0f96ab;
+  --color-brand-blue:         #236d98;
+  --color-brand-blue-light:   #4a85b6;
+  --color-brand-purple:       #492b92;
+  --color-brand-purple-dark:  #3c165d;
+  --color-brand-rose:         #843558;
+  --color-brand-rose-dark:    #6c2164;
+  --color-brand-red:          #692929;
+  --color-brand-dark-blue:    #1b193c;  /* near-black indigo — primary dark ground */
+
+  /* ---- Extended / derived ---- */
+  --color-cream-soft:   #f7e2c2;  /* lighter gold for large fills / tints */
+  --color-cream-deep:   #d9a55f;  /* gold pressed / hover */
+  --color-ink:          #1b193c;  /* body text on light */
+  --color-ink-soft:     #4b4866;  /* secondary text on light */
+  --color-paper:        #fbf8f3;  /* warm off-white page */
+  --color-paper-pure:   #ffffff;
+  --color-line:         #e7e0d6;  /* hairline on light */
+  --color-line-dark:    rgba(240,198,140,0.16); /* hairline on dark */
+
+  /* ---- Signature gradients ---- */
+  --grad-brand: linear-gradient(115deg, #3c165d 0%, #492b92 28%, #6c2164 52%, #843558 70%, #0f96ab 100%);
+  --grad-aurora: radial-gradient(120% 120% at 15% 10%, #492b92 0%, #3c165d 40%, #1b193c 100%);
+  --grad-warm: linear-gradient(120deg, #843558 0%, #6c2164 45%, #492b92 100%);
+  --grad-gold: linear-gradient(110deg, #f7e2c2 0%, #f0c68c 50%, #d9a55f 100%);
+  --grad-cyan-purple: linear-gradient(125deg, #0f96ab 0%, #236d98 35%, #492b92 100%);
+
+  /* ---- Semantic foreground / background ---- */
+  --fg-1: var(--color-ink);          /* primary text on light */
+  --fg-2: var(--color-ink-soft);     /* secondary text on light */
+  --fg-on-dark-1: #fdfbf7;           /* primary text on dark */
+  --fg-on-dark-2: rgba(253,251,247,0.68);
+  --accent: var(--color-brand-cream);
+  --accent-ink: var(--color-brand-purple-dark); /* text that sits on gold */
+  --bg-1: var(--color-paper);
+  --bg-2: var(--color-paper-pure);
+  --bg-dark: var(--color-brand-dark-blue);
+
+  /* ---- Type families ---- */
+  --font-poppins: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-poppins);
+  --font-sans:    var(--font-poppins);
+
+  /* ---- Type scale (fluid-ready; rem base 16px) ---- */
+  --text-xs:   0.75rem;   /* 12 */
+  --text-sm:   0.875rem;  /* 14 */
+  --text-base: 1rem;      /* 16 */
+  --text-lg:   1.125rem;  /* 18 */
+  --text-xl:   1.375rem;  /* 22 */
+  --text-2xl:  1.75rem;   /* 28 */
+  --text-3xl:  2.25rem;   /* 36 */
+  --text-4xl:  3rem;      /* 48 */
+  --text-5xl:  4rem;      /* 64 */
+  --text-6xl:  5.25rem;   /* 84 */
+  --text-7xl:  7rem;      /* 112 */
+
+  /* ---- Weights ---- */
+  --w-light: 300;
+  --w-regular: 400;
+  --w-medium: 500;
+  --w-semibold: 600;
+  --w-bold: 700;
+  --w-extrabold: 800;
+
+  /* ---- Tracking ---- */
+  --track-tight: -0.03em;   /* big display */
+  --track-snug:  -0.015em;
+  --track-normal: 0;
+  --track-wide:  0.08em;     /* eyebrows / labels */
+  --track-wider: 0.18em;     /* all-caps kicker */
+
+  /* ---- Leading ---- */
+  --leading-tight: 1.02;
+  --leading-snug: 1.15;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  /* ---- Spacing scale (8px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 160px;
+
+  /* ---- Radii ---- */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* ---- Elevation (warm-tinted shadows) ---- */
+  --shadow-sm: 0 1px 2px rgba(27,25,60,0.06), 0 2px 6px rgba(27,25,60,0.06);
+  --shadow-md: 0 6px 18px rgba(27,25,60,0.10), 0 2px 6px rgba(27,25,60,0.06);
+  --shadow-lg: 0 18px 48px rgba(27,25,60,0.16), 0 6px 16px rgba(27,25,60,0.08);
+  --shadow-gold: 0 14px 40px rgba(217,165,95,0.40);
+  --shadow-glow: 0 0 0 1px rgba(240,198,140,0.20), 0 20px 60px rgba(73,43,146,0.45);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur-med: 280ms;
+  --dur-slow: 520ms;
+}
+
+/* ============================================================
+   Semantic element defaults (opt-in helpers)
+   ============================================================ */
+.sdw-h1 {
+  font-family: var(--font-display);
+  font-weight: var(--w-extrabold);
+  font-size: clamp(2.75rem, 6vw, var(--text-6xl));
+  line-height: var(--leading-tight);
+  letter-spacing: var(--track-tight);
+}
+.sdw-h2 {
+  font-family: var(--font-display);
+  font-weight: var(--w-bold);
+  font-size: clamp(2rem, 4vw, var(--text-4xl));
+  line-height: var(--leading-snug);
+  letter-spacing: var(--track-snug);
+}
+.sdw-h3 {
+  font-family: var(--font-display);
+  font-weight: var(--w-semibold);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--track-snug);
+}
+.sdw-body {
+  font-family: var(--font-sans);
+  font-weight: var(--w-regular);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--fg-2);
+}
+.sdw-kicker {
+  font-family: var(--font-sans);
+  font-weight: var(--w-semibold);
+  font-size: var(--text-sm);
+  letter-spacing: var(--track-wider);
+  text-transform: uppercase;
+}
+/* "hub"-style italic script accent used in the logo lockup */
+.sdw-script {
+  font-style: italic;
+  font-weight: var(--w-medium);
+  color: var(--accent);
+}

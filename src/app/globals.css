@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* ============================================================
+   SDW.hub — Poppins (self-hosted brand fonts in /public/fonts)
+   ============================================================ */
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 300; font-display: swap; src: url("/fonts/Poppins-Light.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/Poppins-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: italic;  font-weight: 400; font-display: swap; src: url("/fonts/Poppins-Italic.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 500; font-display: swap; src: url("/fonts/Poppins-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: italic;  font-weight: 500; font-display: swap; src: url("/fonts/Poppins-MediumItalic.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 600; font-display: swap; src: url("/fonts/Poppins-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 700; font-display: swap; src: url("/fonts/Poppins-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 800; font-display: swap; src: url("/fonts/Poppins-ExtraBold.ttf") format("truetype"); }
+
+/* ============================================================
+   Design tokens (SDW.hub 2026) → generate Tailwind utilities
+   ============================================================ */
+@theme {
+  --color-gold: #f0c68c;
+  --color-gold-soft: #f7e2c2;
+  --color-gold-deep: #d9a55f;
+  --color-cyan: #0f96ab;
+  --color-blue: #236d98;
+  --color-blue-light: #4a85b6;
+  --color-purple: #492b92;
+  --color-purple-dark: #3c165d;
+  --color-rose: #843558;
+  --color-rose-dark: #6c2164;
+  --color-red: #692929;
+  --color-indigo: #1b193c;
+  --color-paper: #fbf8f3;
+  --color-ink: #1b193c;
+  --color-ink-soft: #4b4866;
+  --color-line: #e7e0d6;
+
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-pill: 999px;
+
+  --shadow-gold: 0 14px 40px rgba(217, 165, 95, 0.4);
+  --shadow-warm-md: 0 6px 18px rgba(27, 25, 60, 0.1), 0 2px 6px rgba(27, 25, 60, 0.06);
+  --shadow-warm-lg: 0 18px 48px rgba(27, 25, 60, 0.16), 0 6px 16px rgba(27, 25, 60, 0.08);
+
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---- base ---- */
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+}
+
+/* ---- signature gradients as utilities ---- */
+@utility grad-brand {
+  background-image: linear-gradient(115deg, #3c165d 0%, #492b92 28%, #6c2164 52%, #843558 70%, #0f96ab 100%);
+}
+@utility grad-warm {
+  background-image: linear-gradient(120deg, #843558 0%, #6c2164 45%, #492b92 100%);
+}
+@utility grad-cyan-purple {
+  background-image: linear-gradient(125deg, #0f96ab 0%, #236d98 35%, #492b92 100%);
+}
+
+/* "hub"-style italic script accent */
+@utility script {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-gold);
+}
+
+/* ---- marquee (v4) ---- */
+@keyframes sdw-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: sdw-marquee 28s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+}
+
+/* ---- scroll reveal (driven by <Reveal/>) ---- */
+.reveal { opacity: 0; transform: translateY(20px); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    transition: opacity 0.7s var(--ease-brand), transform 0.7s var(--ease-brand);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}

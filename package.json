@@ -1,0 +1,31 @@
+{
+  "name": "sdwhub-lp-acesso",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing pages do Método ACESSO — SDW.hub (Santos Digital Week)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@base-ui-components/react": "1.0.0-rc.0",
+    "@phosphor-icons/react": "^2.1.10",
+    "@typebot.io/react": "^0.10.2",
+    "next": "^16.2.7",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwind-merge": "^3.3.1",
+    "tailwind-variants": "^2.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.7.3"
+  }
+}
