@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Analytics } from '@/components/Analytics';
 import { FloatButton } from '@/components/FloatButton';
+import UtmForwarder from '@/components/UtmForwarder';
 // import { TypebotWidgets } from "@/components/Typebot";
 import { SITE_URL } from '@/lib/site';
 import './globals.css';
@@ -20,11 +21,7 @@ export const viewport: Viewport = {
   themeColor: '#0f0e22',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <head>
@@ -69,6 +66,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <FloatButton />
+        <UtmForwarder />
         {/* <TypebotWidgets /> */}
       </body>
     </html>

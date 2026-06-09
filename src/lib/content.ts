@@ -126,15 +126,11 @@ export const SPEAKERS_IMG = {
 };
 
 export const SPEAKERS_IMG_LARA = {
-  jpeg: "/assets/speakers-marcel-lara.webp",
-  width: 1122,
-  height: 1402,
-  alt: "Marcel Roxo e Lara Finochio",
+  src: "/assets/lara.jpg",
+  alt: "Lara Finochio",
 };
 
 export const SPEAKERS_IMG_MARCEL = {
-  jpeg: "/assets/speakers-marcel-lara.png",
-  width: 1122,
-  height: 1402,
-  alt: "Marcel Roxo e Lara Finochio",
+  src: "/assets/marcel.jpg",
+  alt: "Marcel Roxo",
 };

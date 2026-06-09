@@ -11,8 +11,7 @@ const DESC =
 
 export const metadata: Metadata = pageMetadata({
   path: '/v3',
-  title:
-    'Treinamento Gratuito para Empreendedores | Método ACESSO · SDW.hub Santos',
+  title: 'Treinamento Gratuito para Empreendedores | Método ACESSO · SDW.hub Santos',
   description: DESC,
   ogTitle: 'Treinamento Gratuito para Empreendedores | Método ACESSO',
   ogDescription:
@@ -57,15 +56,15 @@ const kicker = 'text-xs font-semibold uppercase tracking-[0.18em] text-blue';
 
 export default function Page() {
   return (
-    <div className="min-h-dvh bg-paper text-ink">
+    <div className="bg-paper text-ink min-h-dvh">
       <JsonLd data={courseJsonLd('/v3', DESC)} />
 
-      <header className="sticky top-0 z-50 border-b border-line bg-[rgba(251,248,243,0.82)] backdrop-blur-[12px]">
-        <nav className="mx-auto flex max-w-[1180px] items-center justify-between px-[30px] py-4">
+      <header className="border-line sticky top-0 z-50 border-b bg-[rgba(251,248,243,0.82)] backdrop-blur-md">
+        <nav className="mx-auto flex max-w-295 items-center justify-between px-7.5 py-4">
           <a href="#" aria-label="SDW.hub — início">
-            <Logo variant="purple" className="h-6 w-auto" />
+            <Logo variant="acesso-preto" className="h-16 w-auto" />
           </a>
-          <div className="hidden gap-[30px] text-sm font-medium text-ink-soft md:flex">
+          <div className="text-ink-soft hidden gap-7.5 text-sm font-medium md:flex">
             <a href="#ativos" className="hover:text-blue">
               O Método
             </a>
@@ -76,27 +75,30 @@ export default function Page() {
               Dúvidas
             </a>
           </div>
-          <a href="https://inlead.digital/sdwhub/" className={`${btnPrimary} px-5 py-[11px] text-sm`}>
+          <a
+            href="https://inlead.digital/sdwhub"
+            className={`${btnPrimary} px-5 py-2.75 text-sm`}
+          >
             QUERO APLICAR
           </a>
         </nav>
       </header>
 
       {/* Hero */}
-      <section className="mx-auto max-w-[1180px] px-[30px] pt-[72px] pb-[84px]">
-        <div className="grid items-center gap-5 md:gap-[52px] md:grid-cols-[1fr_1fr]">
+      <section className="mx-auto max-w-295 px-7.5 pt-18 pb-21">
+        <div className="grid items-center gap-5 md:grid-cols-[1fr_1fr] md:gap-13">
           <div className="text-center md:text-left">
             <Reveal as="span" className={kicker}>
               Treinamento gratuito · Método ACESSO
             </Reveal>
             <Reveal
               as="h1"
-              className="mt-2 text-[clamp(2.4rem,4vw,3.4rem)] font-extrabold leading-[1.03] tracking-[-0.035em] md:mt-4"
+              className="mt-2 text-[clamp(2.4rem,4vw,3.4rem)] leading-[1.03] font-extrabold tracking-[-0.035em] md:mt-4"
             >
               O crescimento da sua empresa não travou por falta de{' '}
-              <em className="not-italic text-blue">esforço</em>.
+              <em className="text-blue not-italic">esforço</em>.
             </Reveal>
-            <div className="block md:hidden mt-3 mb-4 border-b border-line">
+            <div className="border-line mt-3 mb-4 block border-b md:hidden">
               <SpeakersImage
                 width={600}
                 height={750}
@@ -105,50 +107,51 @@ export default function Page() {
             </div>
             <Reveal
               as="p"
-              className="mt-2 max-w-[520px] text-[1rem] font-light leading-[1.55] text-ink-soft line-clamp-2 md:mt-[22px] md:text-[1rem] md:line-clamp-none"
+              className="text-ink-soft mt-2 line-clamp-2 max-w-130 text-[1rem] leading-[1.55] font-light md:mt-5.5 md:line-clamp-none md:text-[1rem]"
             >
-              <strong className="font-semibold text-ink">
-                Travou por falta de margem, posicionamento, canais e ambientes
-                certos.
+              <strong className="text-ink font-semibold">
+                Travou por falta de margem, posicionamento, canais e ambientes certos.
               </strong>{' '}
-              Um treinamento gratuito para empresários que já faturam, mas
-              sentem que poderiam crescer mais, vender melhor e construir uma
-              empresa mais desejada pelo mercado.
+              Um treinamento gratuito para empresários que já faturam, mas sentem que poderiam
+              crescer mais, vender melhor e construir uma empresa mais desejada pelo mercado.
             </Reveal>
             <Reveal className="mt-4 flex flex-wrap justify-center gap-3.5 md:mt-8 md:justify-start">
-              <a href="https://inlead.digital/sdwhub/" className={btnPrimary}>
+              <a
+                href="https://inlead.digital/sdwhub"
+                className={btnPrimary}
+              >
                 QUERO APLICAR PARA O TREINAMENTO
               </a>
             </Reveal>
-            <p className="mt-3 text-center md:text-left text-[13px] leading-[1.6] text-ink-soft">
-              <strong className="font-semibold text-blue">26 de junho</strong>
+            <p className="text-ink-soft mt-3 text-center text-[13px] leading-[1.6] md:text-left">
+              <strong className="text-blue font-semibold">26 de junho</strong>
               {' | '}das 9h às 13h
               <br />
               SMART CENTER | Santos | SP
             </p>
             <Reveal
               as="div"
-              className="hidden md:flex mt-7 items-center gap-2.5 text-[13px] text-ink-soft"
+              className="text-ink-soft mt-7 hidden items-center gap-2.5 text-[13px] md:flex"
             >
               <span className="size-2 rounded-full bg-[#2bb673] shadow-[0_0_0_4px_rgba(43,182,115,0.18)]" />{' '}
               Gratuito · para empresas que faturam acima de R$ 300 mil/ano
             </Reveal>
           </div>
           <Reveal className="hidden md:block">
-            <div className="relative h-[36dvh] overflow-hidden md:flex md:h-auto md:min-h-[300px] md:items-end md:justify-end md:overflow-visible">
+            <div className="relative h-[36dvh] overflow-hidden md:flex md:h-auto md:min-h-75 md:items-end md:justify-end md:overflow-visible">
               <SpeakersImage
                 priority
                 width={600}
                 height={750}
-                className="block h-full w-full object-cover object-top md:ml-auto md:h-auto md:w-full md:max-w-[500px] md:object-contain"
+                className="block h-full w-full object-cover object-top md:ml-auto md:h-auto md:w-full md:max-w-125 md:object-contain"
               />
             </div>
-            <div className="hidden md:block mt-0 rounded-[18px] bg-[#f4e7d2] px-6 py-[22px] text-center">
-              <div className="text-[1.05rem] font-semibold text-ink">
+            <div className="mt-0 hidden rounded-[18px] bg-[#f4e7d2] px-6 py-5.5 text-center md:block">
+              <div className="text-ink text-[1.05rem] font-semibold">
                 Com <span className="text-blue">Marcel Roxo</span> &amp;{' '}
                 <span className="text-blue">Lara Finochio</span>
               </div>
-              <div className="mt-1 text-[13px] text-ink">
+              <div className="text-ink mt-1 text-[13px]">
                 Negócios &amp; ecossistemas · Comunicação &amp; autoridade
               </div>
             </div>
@@ -157,38 +160,34 @@ export default function Page() {
       </section>
 
       {/* Stats */}
-      <div className="border-y border-line bg-white">
-        <div className="mx-auto grid max-w-[1180px] grid-cols-2 px-[30px] py-[42px] md:grid-cols-4">
+      <div className="border-line border-y bg-white">
+        <div className="mx-auto grid max-w-295 grid-cols-2 px-7.5 py-10.5 md:grid-cols-4">
           {STATS.map(([n, l], i) => (
             <Reveal
               key={l}
               delay={(i % 4) * 70}
-              className={`px-4 text-center ${i < STATS.length - 1 ? 'md:border-r md:border-line' : ''}`}
+              className={`px-4 text-center ${i < STATS.length - 1 ? 'md:border-line md:border-r' : ''}`}
             >
-              <b className="block text-[2.4rem] font-extrabold leading-none tracking-[-0.03em] text-blue">
+              <b className="text-blue block text-[2.4rem] leading-none font-extrabold tracking-[-0.03em]">
                 {n}
               </b>
-              <span className="mt-2 block text-[13px] font-medium text-ink-soft">
-                {l}
-              </span>
+              <span className="text-ink-soft mt-2 block text-[13px] font-medium">{l}</span>
             </Reveal>
           ))}
         </div>
       </div>
 
       {/* Problema */}
-      <section className="bg-[#f4e7d2] py-[100px]">
-        <div className="mx-auto grid max-w-[1180px] items-center gap-12 px-[30px] md:grid-cols-2">
+      <section className="bg-[#f4e7d2] py-25">
+        <div className="mx-auto grid max-w-295 items-center gap-12 px-7.5 md:grid-cols-2">
           <Reveal>
-            <h2 className="text-[clamp(1.7rem,3.2vw,2.4rem)] font-extrabold leading-[1.14] tracking-[-0.025em]">
+            <h2 className="text-[clamp(1.7rem,3.2vw,2.4rem)] leading-[1.14] font-extrabold tracking-tight">
               O que trouxe sua empresa até aqui pode{' '}
-              <em className="not-italic text-rose">
-                não levar para o próximo nível.
-              </em>
+              <em className="text-rose not-italic">não levar para o próximo nível.</em>
             </h2>
-            <p className="mt-4 text-[1.05rem] font-light text-ink-soft">
-              O problema talvez não seja falta de capacidade — e sim ter chegado
-              no limite do crescimento por esforço.
+            <p className="text-ink-soft mt-4 text-[1.05rem] font-light">
+              O problema talvez não seja falta de capacidade — e sim ter chegado no limite do
+              crescimento por esforço.
             </p>
           </Reveal>
           <Reveal>
@@ -202,7 +201,7 @@ export default function Page() {
               ].map((t) => (
                 <li
                   key={t}
-                  className="relative pl-[30px] text-[1.05rem] font-light leading-[1.45] text-ink-soft before:absolute before:top-1.5 before:left-0 before:flex before:size-4 before:items-center before:justify-center before:rounded-[5px] before:bg-[rgba(132,53,88,0.14)] before:text-[11px] before:font-bold before:text-rose before:content-['!']"
+                  className="text-ink-soft before:text-rose relative pl-7.5 text-[1.05rem] leading-[1.45] font-light before:absolute before:top-1.5 before:left-0 before:flex before:size-4 before:items-center before:justify-center before:rounded-[5px] before:bg-[rgba(132,53,88,0.14)] before:text-[11px] before:font-bold before:content-['!']"
                 >
                   {t}
                 </li>
@@ -213,38 +212,30 @@ export default function Page() {
       </section>
 
       {/* 6 ativos — 2col horizontais */}
-      <section
-        id="ativos"
-        className="mx-auto max-w-[1180px] px-[30px] py-[100px]"
-      >
+      <section id="ativos" className="mx-auto max-w-295 px-7.5 py-25">
         <Reveal className={secHead}>
           <span className={kicker}>A · C · E · S · S · O</span>
           <h2 className={h2}>Os 6 ativos do Método ACESSO.</h2>
-          <p className="mt-3.5 text-[1.1rem] font-light text-ink-soft">
-            Construa o que torna a empresa mais desejada, lucrativa e bem
-            posicionada.
+          <p className="text-ink-soft mt-3.5 text-[1.1rem] font-light">
+            Construa o que torna a empresa mais desejada, lucrativa e bem posicionada.
           </p>
         </Reveal>
-        <div className="grid grid-cols-1 gap-[18px] md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4.5 md:grid-cols-2">
           {ATIVOS.map((a, i) => (
             <Reveal
               key={i}
               delay={(i % 4) * 70}
-              className="flex gap-5 rounded-[18px] border border-line bg-white p-7 transition duration-300 hover:-translate-y-[3px] hover:shadow-[0_16px_40px_rgba(27,25,60,0.1)]"
+              className="border-line flex gap-5 rounded-[18px] border bg-white p-7 transition duration-300 hover:-translate-y-0.75 hover:shadow-[0_16px_40px_rgba(27,25,60,0.1)]"
             >
-              <div className="flex size-[52px] shrink-0 items-center justify-center rounded-[14px] bg-[rgba(35,109,152,0.1)] text-[1.4rem] font-extrabold text-blue">
+              <div className="text-blue flex size-13 shrink-0 items-center justify-center rounded-[14px] bg-[rgba(35,109,152,0.1)] text-[1.4rem] font-extrabold">
                 {a.letter}
               </div>
               <div>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-rose">
+                <div className="text-rose text-[11px] font-semibold tracking-[0.14em] uppercase">
                   {a.tag}
                 </div>
-                <h3 className="my-1.5 text-[1.2rem] font-bold tracking-[-0.02em]">
-                  {a.title}
-                </h3>
-                <p className="text-[0.96rem] font-light leading-[1.55] text-ink-soft">
-                  {a.desc}
-                </p>
+                <h3 className="my-1.5 text-[1.2rem] font-bold tracking-[-0.02em]">{a.title}</h3>
+                <p className="text-ink-soft text-[0.96rem] leading-[1.55] font-light">{a.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -252,37 +243,33 @@ export default function Page() {
       </section>
 
       {/* Para quem */}
-      <section id="quem" className="border-y border-line bg-white py-[100px]">
-        <div className="mx-auto max-w-[1180px] px-[30px]">
+      <section id="quem" className="border-line border-y bg-white py-25">
+        <div className="mx-auto max-w-295 px-7.5">
           <Reveal className={secHead}>
             <span className={kicker}>Qualificação</span>
             <h2 className={h2}>Este treinamento é para você?</h2>
           </Reveal>
           <div className="grid gap-6 md:grid-cols-2">
-            <Reveal className="rounded-[20px] border border-line bg-white p-[34px] shadow-[0_12px_32px_rgba(27,25,60,0.07)]">
-              <h3 className="mb-4 text-[1.3rem] font-bold text-blue">
-                É para você se…
-              </h3>
+            <Reveal className="border-line rounded-[20px] border bg-white p-8.5 shadow-[0_12px_32px_rgba(27,25,60,0.07)]">
+              <h3 className="text-blue mb-4 text-[1.3rem] font-bold">É para você se…</h3>
               <ul className="flex flex-col gap-3">
                 {PARA_QUEM_SIM.map((t) => (
                   <li
                     key={t}
-                    className="relative pl-7 text-base font-light leading-[1.45] text-ink-soft before:absolute before:left-0 before:font-bold before:text-[#2bb673] before:content-['✓']"
+                    className="text-ink-soft relative pl-7 text-base leading-[1.45] font-light before:absolute before:left-0 before:font-bold before:text-[#2bb673] before:content-['✓']"
                   >
                     {t}
                   </li>
                 ))}
               </ul>
             </Reveal>
-            <Reveal className="rounded-[20px] border border-line p-[34px]">
-              <h3 className="mb-4 text-[1.3rem] font-bold">
-                Não é para você se…
-              </h3>
+            <Reveal className="border-line rounded-[20px] border p-8.5">
+              <h3 className="mb-4 text-[1.3rem] font-bold">Não é para você se…</h3>
               <ul className="flex flex-col gap-3">
                 {PARA_QUEM_NAO.map((t) => (
                   <li
                     key={t}
-                    className="relative pl-7 text-base font-light leading-[1.45] text-ink-soft before:absolute before:left-0 before:font-bold before:text-rose before:content-['✕']"
+                    className="text-ink-soft before:text-rose relative pl-7 text-base leading-[1.45] font-light before:absolute before:left-0 before:font-bold before:content-['✕']"
                   >
                     {t}
                   </li>
@@ -296,51 +283,44 @@ export default function Page() {
       {/* Treinadores — dark band */}
       <section
         id="treinadores"
-        className="bg-[linear-gradient(160deg,#1b193c_0%,#2a1a4a_100%)] py-[100px] text-white"
+        className="bg-[linear-gradient(160deg,#1b193c_0%,#2a1a4a_100%)] py-25 text-white"
       >
-        <div className="mx-auto max-w-[1180px] px-[30px]">
+        <div className="mx-auto max-w-295 px-7.5">
           <Reveal className={secHead}>
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+            <span className="text-gold text-xs font-semibold tracking-[0.18em] uppercase">
               Quem vai te treinar
             </span>
-            <h2 className={`${h2} text-white`}>
-              Dois construtores de verdade.
-            </h2>
+            <h2 className={`${h2} text-white`}>Dois construtores de verdade.</h2>
           </Reveal>
           <div className="grid items-center gap-12 md:grid-cols-[0.85fr_1.15fr]">
-            <Reveal className="relative flex min-h-[420px] items-end justify-center overflow-hidden rounded-[24px] bg-[linear-gradient(140deg,#3c165d,#236d98)] shadow-[0_20px_50px_rgba(27,25,60,0.18)]">
-              <SpeakersImage
-                width={500}
-                height={625}
-                className="block h-auto w-[90%]"
-              />
+            <Reveal className="relative flex min-h-105 items-end justify-center overflow-hidden rounded-3xl bg-[linear-gradient(140deg,#3c165d,#236d98)] shadow-[0_20px_50px_rgba(27,25,60,0.18)]">
+              <SpeakersImage width={500} height={625} className="block h-auto w-[90%]" />
             </Reveal>
             <div>
-              <Reveal className="border-b border-[rgba(240,198,140,0.16)] py-[22px] first:pt-0">
+              <Reveal className="border-b border-[rgba(240,198,140,0.16)] py-5.5 first:pt-0">
                 <div className="text-[1.3rem] font-bold tracking-[-0.02em] text-white">
                   Marcel Roxo
                 </div>
-                <div className="mb-2.5 text-[0.92rem] font-semibold text-gold">
+                <div className="text-gold mb-2.5 text-[0.92rem] font-semibold">
                   Construtor de negócios, eventos e ecossistemas
                 </div>
-                <p className="text-[0.98rem] font-light leading-[1.55] text-white/[0.74]">
-                  Ajudou a transformar a Staage numa das maiores plataformas de
-                  marketing do Brasil, criou o Santos Digital Week (10mil+
-                  participantes, 150+ marcas, 154 speakers) e atuou com Joel
-                  Jota, Flávio Augusto e Caio Carneiro.
+                <p className="text-[0.98rem] leading-[1.55] font-light text-white/74">
+                  Ajudou a transformar a Staage numa das maiores plataformas de marketing do Brasil,
+                  criou o Santos Digital Week (10mil+ participantes, 150+ marcas, 154 speakers) e
+                  atuou com Joel Jota, Flávio Augusto e Caio Carneiro.
                 </p>
               </Reveal>
-              <Reveal className="py-[22px]">
+              <Reveal className="py-5.5">
                 <div className="text-[1.3rem] font-bold tracking-[-0.02em] text-white">
                   Lara Finochio
                 </div>
-                <div className="mb-2.5 text-[0.92rem] font-semibold text-gold">
+                <div className="text-gold mb-2.5 text-[0.92rem] font-semibold">
                   Transforma comunicação em autoridade
                 </div>
-                <p className="text-[0.98rem] font-light leading-[1.55] text-white/[0.74]">
-                  Carreira em Band, Record e SBT, depois Joel Jota, Grupo Primo
-                  e Moving Girls. Estrutura narrativa, posicionamento e
-                  autoridade — a capacidade de comunicar melhor o próprio valor.
+                <p className="text-[0.98rem] leading-[1.55] font-light text-white/74">
+                  Carreira em Band, Record e SBT, depois Joel Jota, Grupo Primo e Moving Girls.
+                  Estrutura narrativa, posicionamento e autoridade — a capacidade de comunicar
+                  melhor o próprio valor.
                 </p>
               </Reveal>
             </div>
@@ -349,21 +329,17 @@ export default function Page() {
       </section>
 
       {/* FAQ — 2col estático */}
-      <section id="faq" className="bg-[#f4e7d2] py-[100px]">
-        <div className="mx-auto max-w-[1180px] px-[30px]">
+      <section id="faq" className="bg-[#f4e7d2] py-25">
+        <div className="mx-auto max-w-295 px-7.5">
           <Reveal className={secHead}>
             <span className={kicker}>Dúvidas</span>
             <h2 className={h2}>Perguntas frequentes</h2>
           </Reveal>
           <div className="grid grid-cols-1 gap-x-14 md:grid-cols-2">
             {FAQ_V3.map((f) => (
-              <Reveal key={f.q} className="border-t border-line py-[26px]">
-                <h3 className="mb-2 text-[1.12rem] font-semibold tracking-[-0.01em]">
-                  {f.q}
-                </h3>
-                <p className="text-base font-light leading-[1.6] text-ink-soft">
-                  {f.a}
-                </p>
+              <Reveal key={f.q} className="border-line border-t py-6.5">
+                <h3 className="mb-2 text-[1.12rem] font-semibold tracking-[-0.01em]">{f.q}</h3>
+                <p className="text-ink-soft text-base leading-[1.6] font-light">{f.a}</p>
               </Reveal>
             ))}
           </div>
@@ -373,27 +349,26 @@ export default function Page() {
       {/* Final */}
       <section
         id="aplicar"
-        className="bg-[linear-gradient(120deg,#1b193c_0%,#3c165d_55%,#492b92_100%)] px-[30px] py-24 text-center text-white"
+        className="bg-[linear-gradient(120deg,#1b193c_0%,#3c165d_55%,#492b92_100%)] px-7.5 py-24 text-center text-white"
       >
-        <h2 className="mx-auto max-w-[740px] text-[clamp(2rem,4.6vw,3.4rem)] font-extrabold leading-[1.08] tracking-[-0.03em]">
+        <h2 className="mx-auto max-w-185 text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.08] font-extrabold tracking-[-0.03em]">
           Inscreva-se gratuitamente no Método ACESSO.
         </h2>
-        <p className="mx-auto mt-5 max-w-[520px] text-[1.1rem] font-light text-white/80">
-          Transforme margem, posicionamento, aquisição e relacionamento em
-          crescimento real.
+        <p className="mx-auto mt-5 max-w-130 text-[1.1rem] font-light text-white/80">
+          Transforme margem, posicionamento, aquisição e relacionamento em crescimento real.
         </p>
         <a
-          href="https://inlead.digital/sdwhub/"
-          className="mt-[34px] inline-flex items-center gap-2 rounded-[10px] bg-gold px-7 py-3.5 text-[15px] font-semibold text-purple-dark transition hover:bg-gold-soft"
+          href="https://inlead.digital/sdwhub"
+          className="bg-gold text-purple-dark hover:bg-gold-soft mt-8.5 inline-flex items-center gap-2 rounded-[10px] px-7 py-3.5 text-[15px] font-semibold transition"
         >
           QUERO APLICAR PARA O TREINAMENTO →
         </a>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-line bg-paper py-[44px]">
-        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-5 px-[30px] text-[13.5px] text-ink-soft">
-          <Logo variant="purple" className="h-[22px] w-auto" />
+      <footer className="border-line bg-paper border-t py-11">
+        <div className="text-ink-soft mx-auto flex max-w-295 flex-wrap items-center justify-between gap-5 px-7.5 text-[13.5px]">
+          <Logo variant="acesso-preto" className="h-16 w-auto" />
           <div className="flex gap-6">
             <a href="#ativos" className="hover:text-blue">
               O Método
@@ -404,13 +379,15 @@ export default function Page() {
             <a href="#treinadores" className="hover:text-blue">
               Treinadores
             </a>
-            <a href="https://inlead.digital/sdwhub/" className="hover:text-blue">
+            <a
+              href="https://inlead.digital/sdwhub"
+              className="hover:text-blue"
+            >
               Aplicar
             </a>
           </div>
           <div className="mt-1.5 w-full text-[12px] text-[#9b95a8]">
-            © 2026 Método ACESSO · uma iniciativa SDW.hub — Marcel Roxo &amp;
-            Lara Finochio.
+            © 2026 Método ACESSO · uma iniciativa SDW.hub — Marcel Roxo &amp; Lara Finochio.
           </div>
         </div>
       </footer>

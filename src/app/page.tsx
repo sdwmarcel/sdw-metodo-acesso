@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Reveal } from '@/components/Reveal';
 import { Faq } from '@/components/Faq';
 import { Logo } from '@/components/Logo';
-import { SpeakersImage } from '@/components/SpeakersImage';
+import { SpeakersImage, SpeakersImageMarcel, SpeakersImageLara } from '@/components/SpeakersImage';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMetadata, courseJsonLd } from '@/lib/site';
 import { ATIVOS, PARA_QUEM_SIM, PARA_QUEM_NAO, PROBLEMAS, FAQ, TAKEAWAYS } from '@/lib/content';
@@ -21,8 +21,6 @@ export const metadata: Metadata = pageMetadata({
 
 const btnPrimary =
   'inline-flex items-center gap-2 rounded-pill bg-gold px-7 py-3.5 text-[14.5px] font-semibold text-purple-dark shadow-gold transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-gold-soft active:translate-y-0 active:scale-[0.98]';
-const btnGhost =
-  'inline-flex items-center gap-2 rounded-pill border-[1.5px] border-[rgba(240,198,140,0.16)] px-7 py-3.5 text-[14.5px] font-semibold transition hover:border-gold hover:text-gold';
 
 const ink2 = 'text-[rgba(253,251,247,0.66)]';
 const ink3 = 'text-[rgba(253,251,247,0.42)]';
@@ -48,7 +46,7 @@ export default function Page() {
         >
           <nav className="mx-auto flex max-w-285 items-center justify-between px-7 py-4">
             <a href="#" aria-label="SDW.hub — início">
-              <Logo variant="gold" className="h-6 w-auto" />
+              <Logo variant="acesso-branco" className="h-16 w-auto" />
             </a>
             <div className={`hidden gap-8 text-sm font-medium ${ink2} md:flex`}>
               <a href="#metodo" className="hover:text-gold">
@@ -64,7 +62,10 @@ export default function Page() {
                 Dúvidas
               </a>
             </div>
-            <a href="https://inlead.digital/sdwhub/" className={btnPrimary}>
+            <a
+              href="https://inlead.digital/sdwhub"
+              className={btnPrimary}
+            >
               QUERO APLICAR
             </a>
           </nav>
@@ -101,7 +102,10 @@ export default function Page() {
                   crescer mais, vender melhor e construir uma empresa mais desejada pelo mercado.
                 </p>
                 <div className="mt-4 flex flex-wrap justify-center gap-3.5 md:mt-8 md:justify-start">
-                  <a href="https://inlead.digital/sdwhub/" className={btnPrimary}>
+                  <a
+                    href="https://inlead.digital/sdwhub"
+                    className={btnPrimary}
+                  >
                     QUERO APLICAR PARA O TREINAMENTO
                   </a>
                 </div>
@@ -144,12 +148,12 @@ export default function Page() {
         </main>
 
         {/* Problema */}
-        <section className="w-full bg-gold-soft py-24">
+        <section className="bg-gold-soft w-full py-24">
           <div className="mx-auto grid max-w-285 items-center gap-12 px-7 md:grid-cols-2">
             <Reveal>
-              <p className="text-[clamp(1.6rem,3vw,2.3rem)] leading-tight font-semibold tracking-[-0.02em] text-indigo">
+              <p className="text-indigo text-[clamp(1.6rem,3vw,2.3rem)] leading-tight font-semibold tracking-[-0.02em]">
                 Sua empresa cresceu até aqui. Mas agora existe uma sensação incômoda:{' '}
-                <em className="italic text-purple">o crescimento ficou mais pesado.</em>
+                <em className="text-purple-dark not-italic">o crescimento ficou mais pesado.</em>
               </p>
             </Reveal>
             <Reveal>
@@ -157,7 +161,7 @@ export default function Page() {
                 {PROBLEMAS.map((p) => (
                   <li
                     key={p}
-                    className="relative pl-6 text-[1.06rem] font-light text-ink-soft before:absolute before:left-0 before:font-semibold before:text-rose before:content-['—']"
+                    className="text-ink-soft before:text-rose relative pl-6 text-[1.06rem] font-light before:absolute before:left-0 before:font-semibold before:content-['—']"
                   >
                     {p}
                   </li>
@@ -295,24 +299,16 @@ export default function Page() {
                 Dois construtores. Uma mesa só.
               </h2>
             </Reveal>
-            <div className="grid items-center gap-12 md:grid-cols-[0.82fr_1.18fr]">
-              <Reveal className="relative">
-                <div
-                  aria-hidden
-                  className="absolute inset-[auto_0_0_0] h-[70%] blur-lg"
-                  style={{
-                    background:
-                      'radial-gradient(70% 80% at 50% 100%, rgba(73,43,146,.5), transparent 75%)',
-                  }}
+            <div className="flex flex-col gap-0">
+              <Reveal
+                className={`grid items-center gap-8 border-t py-10 first:border-t-0 first:pt-0 md:grid-cols-[200px_1fr] ${hairline}`}
+              >
+                <SpeakersImageMarcel
+                  width={300}
+                  height={375}
+                  className="h-auto w-auto rounded-xl object-cover object-top drop-shadow-[0_12px_28px_rgba(0,0,0,0.5)]"
                 />
-                <SpeakersImage
-                  width={500}
-                  height={625}
-                  className="relative block h-auto w-full drop-shadow-[0_24px_44px_rgba(0,0,0,0.5)]"
-                />
-              </Reveal>
-              <div>
-                <Reveal className={`border-t ${hairline} py-6 first:border-t-0 first:pt-0`}>
+                <div>
                   <div className="text-[1.4rem] font-bold tracking-[-0.02em]">Marcel Roxo</div>
                   <div className="text-gold mb-2.5 text-[0.95rem] font-medium">
                     Construtor de negócios, eventos e ecossistemas
@@ -322,22 +318,17 @@ export default function Page() {
                     educação, eventos, comunidades e autoridade. Crescimento acontece por ambiente,
                     acesso e relacionamento.
                   </p>
-                  <div className="mt-3.5 flex flex-wrap gap-7">
-                    {[
-                      ['163mil', 'num evento online'],
-                      ['10mil+', 'participantes no SDW'],
-                      ['154', 'speakers reunidos'],
-                    ].map(([n, l]) => (
-                      <div key={l}>
-                        <b className="text-gold block text-[1.4rem] font-extrabold tracking-[-0.02em]">
-                          {n}
-                        </b>
-                        <span className={`text-xs ${ink3}`}>{l}</span>
-                      </div>
-                    ))}
-                  </div>
-                </Reveal>
-                <Reveal className={`border-t ${hairline} py-6`}>
+                </div>
+              </Reveal>
+              <Reveal
+                className={`grid items-center gap-8 border-t py-10 md:grid-cols-[200px_1fr] ${hairline}`}
+              >
+                <SpeakersImageLara
+                  width={300}
+                  height={375}
+                  className="h-auto w-auto rounded-xl object-cover object-top drop-shadow-[0_12px_28px_rgba(0,0,0,0.5)]"
+                />
+                <div>
                   <div className="text-[1.4rem] font-bold tracking-[-0.02em]">Lara Finochio</div>
                   <div className="text-gold mb-2.5 text-[0.95rem] font-medium">
                     Transforma comunicação em autoridade
@@ -347,7 +338,21 @@ export default function Page() {
                     Band, Record e SBT — e depois Joel Jota, Grupo Primo e Moving Girls. Traz a
                     camada que falta: comunicar melhor o próprio valor.
                   </p>
-                </Reveal>
+                </div>
+              </Reveal>
+              <div className="mt-3.5 flex flex-wrap gap-7">
+                {[
+                  ['163mil', 'num evento online'],
+                  ['10mil+', 'participantes no SDW'],
+                  ['154', 'speakers reunidos'],
+                ].map(([n, l]) => (
+                  <div key={l}>
+                    <b className="text-gold block text-[1.4rem] font-extrabold tracking-[-0.02em]">
+                      {n}
+                    </b>
+                    <span className={`text-xs ${ink3}`}>{l}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -411,7 +416,7 @@ export default function Page() {
             relacionamento em crescimento real.
           </p>
           <a
-            href="https://inlead.digital/sdwhub/"
+            href="https://inlead.digital/sdwhub"
             className={`mt-9 ${btnPrimary} px-8.5 text-[16px]`}
           >
             QUERO APLICAR PARA O TREINAMENTO →
@@ -421,7 +426,7 @@ export default function Page() {
         {/* Footer */}
         <footer className="mx-auto max-w-285 px-7 pt-13.5 pb-15">
           <div className="flex flex-wrap items-center justify-between gap-6">
-            <Logo variant="gold" className="h-5.5 w-auto opacity-90" />
+            <Logo variant="acesso-branco" className="h-16 w-auto opacity-90" />
             <div className={`flex gap-6 text-[13.5px] ${ink2}`}>
               <a href="#metodo" className="hover:text-gold">
                 O Método
@@ -432,7 +437,10 @@ export default function Page() {
               <a href="#treinadores" className="hover:text-gold">
                 Treinadores
               </a>
-              <a href="https://inlead.digital/sdwhub/" className="hover:text-gold">
+              <a
+                href="https://inlead.digital/sdwhub"
+                className="hover:text-gold"
+              >
                 Aplicar
               </a>
             </div>
