@@ -58,7 +58,7 @@ export default function Page() {
               Inscrições gratuitas abertas
             </span>
             <a
-              href="#aplicar"
+              href="https://inlead.digital/sdwhub/"
               className={`${btnGold} rounded-pill px-5 py-2.5 text-sm`}
             >
               QUERO APLICAR
@@ -77,7 +77,7 @@ export default function Page() {
           <span>Para empresários</span>
         </div>
         <div className="mt-3 grid items-center gap-4 md:mt-[30px] md:gap-[30px] md:grid-cols-[1fr_1fr]">
-          <div>
+          <div className="text-center md:text-left">
             <Reveal
               as="h1"
               className="text-[clamp(2.4rem,4vw,2.8rem)] font-extrabold leading-[1.0] tracking-[-0.035em]"
@@ -88,6 +88,13 @@ export default function Page() {
               </em>
               .
             </Reveal>
+            <div className={`block md:hidden mt-3 mb-4 border-b ${line}`}>
+              <SpeakersImage
+                width={600}
+                height={750}
+                className="h-[36dvh] w-full object-cover object-top"
+              />
+            </div>
             <Reveal
               as="div"
               className={`mt-3 max-w-[480px] text-[1.12rem] md:mt-[26px] md:text-[1rem] ${ink2}`}
@@ -101,15 +108,21 @@ export default function Page() {
                 querem crescer mais, vender melhor e construir uma empresa mais
                 desejada pelo mercado.
               </p>
-              <div className="mt-3 md:mt-[22px]">
-                <a href="#aplicar" className={`${btnGold} rounded-pill`}>
+              <div className="mt-3 flex justify-center md:mt-[22px] md:justify-start">
+                <a href="https://inlead.digital/sdwhub/" className={`${btnGold} rounded-pill`}>
                   QUERO APLICAR PARA O TREINAMENTO
                 </a>
               </div>
+              <p className={`mt-3 text-center md:text-left text-[13px] leading-[1.6] ${ink2}`}>
+                <strong className="font-semibold text-gold">26 de junho</strong>
+                {' | '}das 9h às 13h
+                <br />
+                SMART CENTER | Santos | SP
+              </p>
             </Reveal>
           </div>
           <Reveal
-            className={`relative order-first md:order-none border-b md:border-b-0 ${line}`}
+            className="relative hidden md:block"
           >
             <span className="absolute top-2 right-0 z-[2] rotate-[4deg] rounded-[8px] bg-gold px-4 py-2.5 text-[13px] font-extrabold tracking-[0.04em] text-purple-dark shadow-[0_14px_30px_rgba(0,0,0,0.3)]">
               100% GRÁTIS
@@ -348,7 +361,7 @@ export default function Page() {
             nível da sua empresa.
           </p>
           <a
-            href="#aplicar"
+            href="https://inlead.digital/sdwhub/"
             className="mt-7 inline-flex items-center gap-2 rounded-pill bg-purple-dark px-[38px] py-[17px] text-[16px] font-bold text-gold transition hover:bg-[#2a0f44]"
           >
             QUERO APLICAR PARA O TREINAMENTO →
@@ -368,7 +381,7 @@ export default function Page() {
             <a href="#" className="hover:text-gold">
               O Método
             </a>
-            <a href="#aplicar" className="hover:text-gold">
+            <a href="https://inlead.digital/sdwhub/" className="hover:text-gold">
               Aplicar
             </a>
             <a href="#" className="hover:text-gold">

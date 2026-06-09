@@ -58,7 +58,7 @@ export default function Page() {
             </a>
           </div>
           <a
-            href="#aplicar"
+            href="https://inlead.digital/sdwhub/"
             className={`${btnDark} px-[22px] py-[11px] text-sm`}
           >
             QUERO APLICAR
@@ -73,7 +73,7 @@ export default function Page() {
           <span>Para empresários</span>
         </div>
         <div className="grid items-center gap-5 md:gap-12 md:grid-cols-[0.9fr_1.1fr]">
-          <div>
+          <div className="text-center md:text-left">
             <Reveal as="span" className={k}>
               Treinamento gratuito · Método ACESSO
             </Reveal>
@@ -84,6 +84,13 @@ export default function Page() {
               O crescimento da sua empresa não travou por falta de{' '}
               <span className="font-medium text-rose italic">esforço</span>.
             </Reveal>
+            <div className="grad-brand block md:hidden mt-3 mb-4 h-[38dvh] overflow-hidden rounded-[24px]">
+              <SpeakersImage
+                width={600}
+                height={750}
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
             <Reveal
               as="p"
               className="mt-2 max-w-[480px] text-[1.18rem] font-light leading-[1.55] text-[#5f5168] line-clamp-2 md:mt-[22px] md:text-[1rem] md:line-clamp-none"
@@ -96,14 +103,17 @@ export default function Page() {
               sentem que poderiam crescer mais, vender melhor e construir uma
               empresa mais desejada pelo mercado.
             </Reveal>
-            <Reveal className="mt-4 flex flex-wrap gap-3.5 md:mt-8">
-              <a href="#aplicar" className={btnDark}>
+            <Reveal className="mt-4 flex flex-wrap justify-center gap-3.5 md:mt-8 md:justify-start">
+              <a href="https://inlead.digital/sdwhub/" className={btnDark}>
                 QUERO APLICAR PARA O TREINAMENTO
               </a>
-              <a href="#metodo" className={btnOutline}>
-                Conheça o método
-              </a>
             </Reveal>
+            <p className="mt-3 text-center md:text-left text-[13px] leading-[1.6] text-[#5f5168]">
+              <strong className="font-semibold text-rose">26 de junho</strong>
+              {' | '}das 9h às 13h
+              <br />
+              SMART CENTER | Santos | SP
+            </p>
             <Reveal
               as="p"
               className="hidden md:block mt-[26px] text-sm text-[#5f5168]"
@@ -112,7 +122,7 @@ export default function Page() {
               <b className="text-ink">Lara Finochio</b>
             </Reveal>
           </div>
-          <Reveal className="grad-brand relative flex h-[38dvh] items-end justify-center overflow-hidden rounded-[24px] shadow-[0_30px_70px_rgba(36,27,46,0.22)] order-first md:order-none md:h-auto md:min-h-[480px]">
+          <Reveal className="grad-brand relative hidden md:flex items-end justify-center overflow-hidden rounded-[24px] shadow-[0_30px_70px_rgba(36,27,46,0.22)] md:h-auto md:min-h-[480px]">
             <SpeakersImage
               priority
               width={600}
@@ -352,7 +362,7 @@ export default function Page() {
           crescimento real.
         </p>
         <a
-          href="#aplicar"
+          href="https://inlead.digital/sdwhub/"
           className="mt-[34px] inline-flex items-center gap-2 rounded-pill bg-gold px-7 py-3.5 text-[15px] font-semibold text-purple-dark transition hover:bg-gold-soft"
         >
           QUERO APLICAR PARA O TREINAMENTO →
@@ -373,7 +383,7 @@ export default function Page() {
             <a href="#faq" className="hover:text-rose">
               Dúvidas
             </a>
-            <a href="#aplicar" className="hover:text-rose">
+            <a href="https://inlead.digital/sdwhub/" className="hover:text-rose">
               Aplicar
             </a>
           </div>

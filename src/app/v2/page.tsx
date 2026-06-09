@@ -54,7 +54,7 @@ export default function Page() {
             </a>
           </div>
           <a
-            href="#aplicar"
+            href="https://inlead.digital/sdwhub/"
             className={`${btnGold} px-[22px] py-[11px] text-sm`}
           >
             QUERO APLICAR
@@ -73,7 +73,7 @@ export default function Page() {
           className="absolute bottom-[60px] -left-[120px] size-[360px] rounded-full bg-gold opacity-[0.28] blur-[60px]"
         />
         <div className="relative z-[2] mx-auto grid max-w-[1180px] items-end gap-4 px-7 md:gap-[30px] md:grid-cols-[0.85fr_1.15fr]">
-          <div className="pb-4 md:pb-24">
+          <div className="pb-4 md:pb-24 text-center md:text-left">
             <Reveal>
               <span className="mb-2 inline-flex items-center gap-2.5 rounded-pill border border-white/20 bg-white/10 px-[18px] py-2.5 text-[13px] font-medium backdrop-blur-[8px] before:size-2 before:rounded-full before:bg-gold before:shadow-[0_0_0_4px_rgba(240,198,140,0.3)] md:mb-[26px]">
                 Treinamento gratuito · Método ACESSO
@@ -85,6 +85,13 @@ export default function Page() {
                 </em>
                 .
               </h1>
+              <div className="block md:hidden mt-3 mb-4 border-b border-white/25">
+                <SpeakersImage
+                  width={600}
+                  height={750}
+                  className="h-[36dvh] w-full object-cover object-top"
+                />
+              </div>
               <p className="mt-2 max-w-[500px] text-[1rem] font-light text-white/85 line-clamp-2 md:mt-6 md:line-clamp-none">
                 <strong className="font-semibold text-white">
                   Travou por falta de margem, posicionamento, canais e ambientes
@@ -94,17 +101,20 @@ export default function Page() {
                 sentem que poderiam crescer mais, vender melhor e construir uma
                 empresa mais desejada pelo mercado.
               </p>
-              <div className="mt-4 flex flex-wrap gap-3.5 md:mt-8">
-                <a href="#aplicar" className={btnGold}>
+              <div className="mt-4 flex flex-wrap justify-center gap-3.5 md:mt-8 md:justify-start">
+                <a href="https://inlead.digital/sdwhub/" className={btnGold}>
                   QUERO APLICAR PARA O TREINAMENTO
                 </a>
-                <a href="#ativos" className={btnOutline}>
-                  Ver o método
-                </a>
               </div>
+              <p className="mt-3 text-center md:text-left text-[13px] leading-[1.6] text-white/65">
+                <strong className="font-semibold text-gold">26 de junho</strong>
+                {' | '}das 9h às 13h
+                <br />
+                SMART CENTER | Santos | SP
+              </p>
             </Reveal>
           </div>
-          <Reveal className="relative self-end order-first md:order-none border-b md:border-b-0 border-white/25">
+          <Reveal className="relative self-end hidden md:block">
             <SpeakersImage
               priority
               width={600}
@@ -331,7 +341,7 @@ export default function Page() {
           Transforme margem, posicionamento, aquisição e relacionamento em
           crescimento real.
         </p>
-        <a href="#aplicar" className={`relative z-[2] mt-9 ${btnGold}`}>
+        <a href="https://inlead.digital/sdwhub/" className={`relative z-[2] mt-9 ${btnGold}`}>
           QUERO APLICAR PARA O TREINAMENTO →
         </a>
       </section>
@@ -350,7 +360,7 @@ export default function Page() {
             <a href="#treinadores" className="hover:text-gold">
               Treinadores
             </a>
-            <a href="#aplicar" className="hover:text-gold">
+            <a href="https://inlead.digital/sdwhub/" className="hover:text-gold">
               Aplicar
             </a>
           </div>

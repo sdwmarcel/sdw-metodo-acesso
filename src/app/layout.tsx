@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Analytics } from '@/components/Analytics';
+import { FloatButton } from '@/components/FloatButton';
 // import { TypebotWidgets } from "@/components/Typebot";
 import { SITE_URL } from '@/lib/site';
 import './globals.css';
@@ -67,6 +68,7 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         {children}
         <Analytics />
+        <FloatButton />
         {/* <TypebotWidgets /> */}
       </body>
     </html>
