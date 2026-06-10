@@ -56,6 +56,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           fetchPriority="high"
         />
         {/* Preconnect dos serviços de terceiros */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://connect.facebook.net" />
       </head>
       {/* suppressHydrationWarning: extensões de browser (Grammarly, LastPass,

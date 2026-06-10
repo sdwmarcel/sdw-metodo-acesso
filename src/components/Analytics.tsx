@@ -1,10 +1,22 @@
 import Script from 'next/script';
-import { META_PIXEL_ID } from '@/lib/site';
+import { META_PIXEL_ID, GA4_ID } from '@/lib/site';
 
-/** Meta Pixel — carregado em todas as páginas via layout.tsx */
+/** Meta Pixel + GA4 — carregados em todas as páginas via layout.tsx */
 export function Analytics() {
   return (
     <>
+      {/* Google Analytics 4 */}
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="ga4" strategy="afterInteractive">
+        {`window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());
+gtag('config','${GA4_ID}');`}
+      </Script>
+      {/* Meta Pixel */}
       <Script id="meta-pixel" strategy="afterInteractive">
         {`!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

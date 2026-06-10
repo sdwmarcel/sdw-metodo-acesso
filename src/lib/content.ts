@@ -5,7 +5,7 @@ export const ATIVOS = [
     letter: "A",
     tag: "Ajuste do modelo de negócio",
     title: "Crescer com margem, não só faturamento.",
-    desc: "Antes de atrair mais clientes, entenda se a empresa está preparada para crescer.",
+    desc: "Antes de atrair mais clientes, entenda se a empresa está preparada para crescer. Crescer vendendo o produto errado, com margem ruim, só acelera o problema.",
     bullets: ["Quais ofertas dão mais margem", "Quais clientes valem mais a pena", "Onde sua empresa está perdendo lucro"],
     chip: "Margem",
   },
@@ -13,17 +13,9 @@ export const ATIVOS = [
     letter: "C",
     tag: "Clareza de posicionamento",
     title: "Saia da disputa por preço.",
-    desc: "Se o mercado não entende por que você é diferente, ele te compara com qualquer um.",
+    desc: "Empresas genéricas competem por preço. Se o mercado não entende por que você é diferente, ele te compara com qualquer um.",
     bullets: ["Quem você atende e que dor resolve", "Por que sua empresa é diferente", "Por que cobrar mais por você"],
     chip: "Posicionamento",
-  },
-  {
-    letter: "E",
-    tag: "Exposição estratégica do founder",
-    title: "Sua voz como canal de crescimento.",
-    desc: "Founder Led Growth não é virar influencer — é usar autoridade para gerar confiança.",
-    bullets: ["Presença que atrai oportunidades", "Visão que aumenta a percepção de valor"],
-    chip: "Autoridade",
   },
   {
     letter: "S",
@@ -37,7 +29,7 @@ export const ATIVOS = [
     letter: "S",
     tag: "Social proof e reputação",
     title: "Menos prova, mais desconto pedido.",
-    desc: "Quanto maior o ticket, maior a necessidade de confiança para o cliente decidir.",
+    desc: "Quanto maior o ticket, maior a necessidade de confiança. O cliente precisa de provas para acreditar que sua empresa é a escolha certa.",
     bullets: ["Cases, depoimentos e números", "Autoridade e provas de entrega"],
     chip: "Confiança",
   },
@@ -45,9 +37,17 @@ export const ATIVOS = [
     letter: "O",
     tag: "Oportunidades por comunidade e eventos",
     title: "O negócio que nasce de uma conversa.",
-    desc: "Muito crescimento nasce de uma indicação, uma parceria, um evento, uma mesa.",
+    desc: "Nem todo crescimento nasce de campanha. Muito crescimento nasce de uma conversa certa.",
     bullets: ["Ambientes como canal estratégico", "A oportunidade na conversa que falta"],
     chip: "Conexão",
+  },
+  {
+    letter: "E",
+    tag: "Exposição estratégica do founder",
+    title: "Sua voz como canal de crescimento.",
+    desc: "Founder Led Growth não é virar influencer — é usar a autoridade do fundador para gerar confiança e atrair oportunidades.",
+    bullets: ["Presença que atrai oportunidades", "Visão que aumenta a percepção de valor"],
+    chip: "Autoridade",
   },
 ] as const;
 
@@ -63,17 +63,35 @@ export const PARA_QUEM_SIM = [
 export const PARA_QUEM_NAO = [
   "Procura fórmula mágica",
   "Quer crescer sem ajustar o negócio",
-  "Busca apenas “mais seguidores”",
+  'Busca apenas "mais seguidores"',
   "Acredita que só tráfego pago resolve tudo",
   "Quer continuar fazendo tudo do mesmo jeito",
 ];
 
 export const PROBLEMAS = [
-  "Você trabalha muito — e depende demais da sua presença.",
-  "Depende demais de indicação para vender.",
-  "Sua comunicação ainda não traduz o valor real da empresa.",
+  "Você trabalha muito.",
+  "Depende demais de indicação.",
+  "Depende demais da sua presença.",
+  "Sente que sua comunicação ainda não traduz o valor real da sua empresa.",
   "Tem dificuldade em criar canais de aquisição previsíveis.",
-  "Mesmo vendendo, poderia ter mais margem e mais clareza.",
+];
+
+export const CONQUISTAS = [
+  "Você conquistou clientes.",
+  "Validou seu produto.",
+  "Criou reputação.",
+  "Gerou faturamento.",
+  "Sobreviveu a fases difíceis.",
+  "Aprendeu na prática.",
+];
+
+export const ESTRUTURA_CARDS = [
+  "Exige modelo de negócio mais lucrativo.",
+  "Exige posicionamento mais claro.",
+  "Exige comunicação mais forte do fundador.",
+  "Exige canais de aquisição mais consistentes.",
+  "Exige prova, reputação e confiança.",
+  "Exige estar nas mesas certas.",
 ];
 
 export const TRAINERS = [

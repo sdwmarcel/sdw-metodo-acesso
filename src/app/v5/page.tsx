@@ -5,7 +5,73 @@ import { Logo } from '@/components/Logo';
 import { SpeakersImage, SpeakersImageLara, SpeakersImageMarcel } from '@/components/SpeakersImage';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMetadata, courseJsonLd } from '@/lib/site';
-import { ATIVOS, PARA_QUEM_SIM, PARA_QUEM_NAO, FAQ } from '@/lib/content';
+import { PARA_QUEM_SIM, PARA_QUEM_NAO, FAQ } from '@/lib/content';
+
+const RICH_ATIVOS: Array<{
+  letter: string; tag: string; title: string; chip: string;
+  paras: string[]; midBold?: string; midText?: string;
+  introBold?: boolean; intro?: string; bullets?: string[];
+  oLines?: string[]; outroTexts?: string[]; outroBold?: string;
+}> = [
+  {
+    letter: 'A', tag: 'Ajuste do modelo de negócio', title: 'Ajuste do Modelo de Negócio', chip: 'Margem',
+    paras: [
+      'Antes de atrair mais clientes, você precisa entender se sua empresa está preparada para crescer.',
+      'Porque crescer vendendo o produto errado, para o cliente errado, com margem ruim, só acelera o problema.',
+    ],
+    introBold: true,
+    intro: 'Você vai aprender a identificar:',
+    bullets: ['quais ofertas dão mais margem', 'quais clientes valem mais a pena', 'quais produtos drenam energia', 'onde sua empresa está perdendo lucro', 'como pensar em crescimento com margem, não apenas faturamento'],
+  },
+  {
+    letter: 'C', tag: 'Clareza de posicionamento', title: 'Clareza de Posicionamento', chip: 'Posicionamento',
+    paras: [
+      'Empresas genéricas competem por preço.',
+      'Se o mercado não entende por que você é diferente, ele compara você com qualquer outra opção.',
+    ],
+    intro: 'Você vai aprender a construir uma mensagem mais clara sobre:',
+    bullets: ['quem você atende', 'que dor resolve', 'qual resultado entrega', 'por que sua empresa é diferente', 'por que o cliente deveria pagar mais por você'],
+  },
+  {
+    letter: 'S', tag: 'Sistema de aquisição', title: 'Sistema de Aquisição', chip: 'Aquisição',
+    paras: ['Empresa que depende de um único canal vive em risco.'],
+    midBold: 'Indicação é ótima.',
+    midText: 'Mas indicação sem estratégia é instável.',
+    intro: 'Você vai aprender como pensar em canais de aquisição além do improviso:',
+    bullets: ['conteúdo', 'parcerias', 'eventos', 'relacionamento', 'tráfego', 'base própria', 'comunidade', 'indicação estruturada'],
+    outroTexts: ['A pergunta não é apenas "como vender mais?".', 'A pergunta é:'],
+    outroBold: 'quais canais sua empresa precisa construir para parar de depender da sorte?',
+  },
+  {
+    letter: 'S', tag: 'Social proof e reputação', title: 'Social Proof, Reputação e Confiança', chip: 'Confiança',
+    paras: [
+      'Quanto maior o ticket, maior a necessidade de confiança.',
+      'O cliente precisa de provas para acreditar que sua empresa é a escolha certa.',
+    ],
+    intro: 'Você vai aprender a organizar e usar melhor:',
+    bullets: ['cases', 'depoimentos', 'números', 'histórias de clientes', 'bastidores', 'autoridade', 'reputação', 'provas de entrega'],
+    outroTexts: ['Porque quanto menos prova você mostra, mais desconto o cliente pede.'],
+  },
+  {
+    letter: 'O', tag: 'Oportunidades por comunidade e eventos', title: 'Oportunidades por Comunidade e Eventos', chip: 'Conexão',
+    paras: ['Nem todo crescimento nasce de campanha.', 'Muito crescimento nasce de uma conversa certa.'],
+    oLines: ['Uma indicação.', 'Uma parceria.', 'Um evento.', 'Uma comunidade.', 'Uma mesa.', 'Um relacionamento que abre uma nova porta.'],
+    outroTexts: [
+      'Você vai entender como ambientes, comunidades e eventos podem se tornar canais estratégicos de crescimento.',
+      'Porque a oportunidade que você procura talvez esteja em uma conversa que você ainda não teve.',
+    ],
+  },
+  {
+    letter: 'E', tag: 'Exposição estratégica do founder', title: 'Exposição Estratégica do Founder', chip: 'Autoridade',
+    paras: [
+      'Em empresas pequenas e médias, o fundador é um dos maiores ativos de confiança.',
+      'Mas muitos empresários ainda se escondem atrás da marca.',
+    ],
+    midBold: 'Founder Led Growth não é virar influencer.',
+    midText: 'É usar a voz, a visão e a autoridade do fundador para gerar confiança, atrair oportunidades e aumentar a percepção de valor da empresa.',
+    outroTexts: ['Você vai aprender como transformar sua presença em um canal de crescimento.'],
+  },
+];
 
 const DESC =
   'Dois construtores, uma metodologia. O Método ACESSO é um treinamento gratuito para empresários prontos para o próximo nível. Santos, São Paulo.';
@@ -21,11 +87,8 @@ export const metadata: Metadata = pageMetadata({
 
 const btnDark =
   'inline-flex items-center gap-2 rounded-pill bg-indigo px-7 py-3.5 text-[15px] font-semibold text-gold shadow-[0_12px_30px_rgba(27,25,60,0.22)] transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-[#2a2750] active:scale-[0.98]';
-const btnOutline =
-  'inline-flex items-center gap-2 rounded-pill border-[1.5px] border-line bg-transparent px-7 py-3.5 text-[15px] font-semibold text-ink transition hover:border-rose hover:text-rose';
 
 const k = 'text-xs font-semibold uppercase tracking-[0.2em] text-rose';
-const secIntro = 'mx-auto mb-17.5 max-w-[680px] text-center';
 const h2 = 'mt-3.5 text-[clamp(1.9rem,4vw,2.9rem)] font-extrabold leading-[1.1] tracking-[-0.03em]';
 
 const NUMS = ['01', '02', '03', '04', '05', '06'];
@@ -34,6 +97,21 @@ const TRAINER_TAGS = [
   ['Staage', 'Santos Digital Week', 'The Advisory Board'],
   ['Band · Record · SBT', 'Grupo Primo', 'Moving Girls'],
 ];
+
+function CheckIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none">
+      <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5" />
+      <path
+        d="M6.5 10l2.5 2.5 4.5-4.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 export default function Page() {
   return (
@@ -48,6 +126,9 @@ export default function Page() {
           <div className="hidden gap-7.5 text-sm font-medium text-[#5f5168] md:flex">
             <a href="#metodo" className="hover:text-rose">
               O Método
+            </a>
+            <a href="#ativos" className="hover:text-rose">
+              Os Ativos
             </a>
             <a href="#treinadores" className="hover:text-rose">
               Treinadores
@@ -140,29 +221,27 @@ export default function Page() {
         </span>
       </div>
 
-      {/* Problema */}
-      <section className="bg-[#f1e3cb] py-24">
-        <div className="mx-auto grid max-w-295 items-center gap-14 px-7.5 md:grid-cols-2">
+      {/* Seção 2 — Conquistas */}
+      <section className="mx-auto max-w-295 px-7.5 pt-22.5 pb-0">
+        <div className="grid items-center gap-12 md:grid-cols-2">
           <Reveal>
-            <p className="text-[clamp(1.6rem,3.2vw,2.4rem)] leading-[1.2] font-bold tracking-tight">
-              O que trouxe sua empresa até aqui pode{' '}
-              <em className="text-rose not-italic">não levar para o próximo nível.</em>
+            <p className="text-[clamp(1.7rem,3.4vw,2.6rem)] leading-[1.18] font-bold tracking-tight">
+              Sua empresa cresceu até aqui
             </p>
           </Reveal>
           <Reveal>
             <ul className="flex flex-col gap-3.5">
               {[
-                'Você trabalha muito e depende da sua presença',
-                'Depende demais de indicação para vender',
-                'A comunicação não traduz o valor real da empresa',
-                'Falta um canal de aquisição previsível',
-                'Mesmo vendendo, poderia ter mais margem e clareza',
-              ].map((t) => (
-                <li
-                  key={t}
-                  className="before:text-rose relative pl-6.5 text-[1.05rem] leading-[1.45] font-light text-[#5f5168] before:absolute before:left-0 before:font-semibold before:content-['—']"
-                >
-                  {t}
+                'Você conquistou clientes.',
+                'Validou seu produto.',
+                'Criou reputação.',
+                'Gerou faturamento.',
+                'Sobreviveu a fases difíceis.',
+                'Aprendeu na prática.',
+              ].map((p) => (
+                <li key={p} className="flex items-start gap-3 text-[#241a2e] text-[1.05rem] font-medium">
+                  <CheckIcon className="mt-0.5 size-5 shrink-0 text-rose" />
+                  {p}
                 </li>
               ))}
             </ul>
@@ -170,9 +249,213 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 6 ativos — alternating rows */}
-      <section id="metodo" className="mx-auto max-w-295 px-7.5 py-24">
-        <Reveal className={secIntro}>
+      {/* Seção 3 — Desafios */}
+      <section className="border-line mx-auto max-w-295 border-t px-7.5 py-22.5">
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <Reveal>
+            <p className="text-[clamp(1.7rem,3.4vw,2.6rem)] leading-[1.18] font-bold tracking-tight">
+              Mas agora existe uma sensação incômoda:{' '}
+              <em className="text-rose not-italic">o crescimento ficou mais pesado.</em>
+            </p>
+          </Reveal>
+          <Reveal>
+            <ul className="flex flex-col gap-3.5">
+              {[
+                'Você trabalha muito.',
+                'Depende demais de indicação.',
+                'Depende demais da sua presença.',
+                'Sente que sua comunicação ainda não traduz o valor real da sua empresa.',
+                'Tem dificuldade em criar canais de aquisição previsíveis.',
+              ].map((p) => (
+                <li key={p} className="flex items-start gap-3 text-[1.05rem] font-light text-[#5f5168]">
+                  <CheckIcon className="mt-0.5 size-5 shrink-0 text-rose" />
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Seção 4 — Transição */}
+      <section className="border-line border-t bg-[#f1e3cb] py-20">
+        <div className="mx-auto max-w-160 px-7.5 text-center">
+          <Reveal>
+            <p className="text-[clamp(1.2rem,2.4vw,1.6rem)] leading-[1.45] font-bold tracking-[-0.02em]">
+              E, mesmo vendendo, percebe que poderia ter mais margem, mais clareza e mais força no
+              mercado.
+            </p>
+            <p className="mt-5 text-[1.05rem] font-light leading-[1.65] text-[#5f5168]">
+              O problema talvez não seja falta de capacidade.
+            </p>
+            <p className="mt-2 text-[1.05rem] font-light leading-[1.65] text-[#5f5168]">
+              Talvez sua empresa só tenha chegado no limite do crescimento por esforço.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <a href="https://inlead.digital/sdwhub" className={btnDark}>
+                QUERO APLICAR PARA O TREINAMENTO
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Seção 5 — Statement */}
+      <section className="border-line border-t py-20">
+        <div className="mx-auto max-w-295 px-7.5">
+          <Reveal>
+            <h2 className="text-center text-[clamp(1.9rem,4.6vw,3.4rem)] leading-[1.04] font-extrabold tracking-[-0.03em]">
+              O que trouxe sua empresa até aqui pode não levar para o próximo nível.
+            </h2>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Seção 6 — Estrutura necessária */}
+      <section className="border-line border-t bg-[#f1e3cb] py-22.5">
+        <div className="mx-auto max-w-295 px-7.5">
+          <Reveal className="mb-11.5">
+            <h2 className="text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.04] font-extrabold tracking-[-0.03em]">
+              Chega uma hora em que crescer exige outra estrutura.
+            </h2>
+          </Reveal>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {[
+              {
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" className="size-6">
+                    <rect x="2" y="14" width="4" height="8" rx="1" stroke="currentColor" strokeWidth="1.5" />
+                    <rect x="9" y="9" width="4" height="13" rx="1" stroke="currentColor" strokeWidth="1.5" />
+                    <rect x="16" y="4" width="4" height="18" rx="1" stroke="currentColor" strokeWidth="1.5" />
+                  </svg>
+                ),
+                text: 'Exige modelo de negócio mais lucrativo.',
+              },
+              {
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" className="size-6">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" />
+                    <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="1.5" />
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                  </svg>
+                ),
+                text: 'Exige posicionamento mais claro.',
+              },
+              {
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" className="size-6">
+                    <path
+                      d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinejoin="round"
+                    />
+                    <path d="M8 9h8M8 13h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                ),
+                text: 'Exige comunicação mais forte do fundador.',
+              },
+              {
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" className="size-6">
+                    <path
+                      d="M22 12H2M2 12l5-5M2 12l5 5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <circle cx="17" cy="7" r="3" stroke="currentColor" strokeWidth="1.5" />
+                    <circle cx="17" cy="17" r="3" stroke="currentColor" strokeWidth="1.5" />
+                  </svg>
+                ),
+                text: 'Exige canais de aquisição mais consistentes.',
+              },
+              {
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" className="size-6">
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                ),
+                text: 'Exige prova, reputação e confiança.',
+              },
+              {
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" className="size-6">
+                    <circle cx="9" cy="7" r="3" stroke="currentColor" strokeWidth="1.5" />
+                    <circle cx="17" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+                    <path
+                      d="M2 20c0-3.31 3.13-6 7-6s7 2.69 7 6"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M17 14.5c2.21 0 4 1.79 4 4"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                ),
+                text: 'Exige estar nas mesas certas.',
+              },
+            ].map((card, i) => (
+              <Reveal
+                key={i}
+                delay={(i % 3) * 80}
+                className="border-line flex items-center gap-4 rounded-[18px] border bg-white px-5 py-5 shadow-[0_8px_24px_rgba(36,27,46,0.06)]"
+              >
+                <span className="text-rose shrink-0">{card.icon}</span>
+                <span className="text-[1.02rem] font-medium leading-[1.45] text-[#5f5168]">{card.text}</span>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal>
+            <p className="mt-11 text-center text-[1.2rem] font-bold tracking-[-0.01em]">
+              É isso que você vai aprender no Método ACESSO.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Seção 7 — O que é o Método */}
+      <section id="metodo" className="border-line border-t py-22.5">
+        <div className="mx-auto grid max-w-295 items-center gap-12 px-7.5 md:grid-cols-2">
+          <Reveal>
+            <h2 className="text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.04] font-extrabold tracking-[-0.03em]">
+              O que é o Método A.C.E.S.S.O.
+            </h2>
+            <p className="mt-5 text-[1.05rem] leading-[1.65] font-light text-[#5f5168]">
+              O Método ACESSO é uma metodologia criada para ajudar empresários a destravarem
+              crescimento construindo os ativos que tornam uma empresa mais desejada, lucrativa e
+              bem posicionada.
+            </p>
+            <p className="mt-4 text-[1.05rem] leading-[1.65] font-light text-[#5f5168]">
+              Durante o treinamento, você vai entender como sair do crescimento baseado apenas em
+              esforço e começar a construir uma empresa com mais clareza, margem, aquisição e
+              relacionamento estratégico.
+            </p>
+          </Reveal>
+          <Reveal className="overflow-hidden rounded-[18px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/espaco_evento.jpeg"
+              alt="Espaço do evento Método ACESSO"
+              className="h-auto w-full rounded-[18px] object-cover"
+            />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Seção 8 — 6 ativos */}
+      <section id="ativos" className="mx-auto max-w-295 px-7.5 py-24">
+        <Reveal className="mx-auto mb-17.5 max-w-170 text-center">
           <span className={k}>A · C · E · S · S · O</span>
           <h2 className={h2}>Os 6 ativos do Método ACESSO.</h2>
           <p className="mt-3.5 text-[1.1rem] font-light text-[#5f5168]">
@@ -181,7 +464,7 @@ export default function Page() {
           </p>
         </Reveal>
         <div>
-          {ATIVOS.map((a, i) => (
+          {RICH_ATIVOS.map((a, i) => (
             <Reveal
               key={i}
               delay={(i % 3) * 80}
@@ -197,19 +480,35 @@ export default function Page() {
                 <h3 className="my-3 text-[clamp(1.5rem,2.8vw,2.1rem)] leading-[1.1] font-bold tracking-tight">
                   {a.title}
                 </h3>
-                <p className="max-w-155 text-[1.06rem] leading-[1.6] font-light text-[#5f5168]">
-                  {a.desc}
-                </p>
+                <div className="max-w-155 text-[1.06rem] leading-[1.6] font-light text-[#5f5168]">
+                  {a.paras.map((p, j) => <p key={j} className={j > 0 ? 'mt-2' : undefined}>{p}</p>)}
+                  {a.midBold && <p className="mt-3 font-semibold text-[#241a2e]">{a.midBold}</p>}
+                  {a.midText && <p className="mt-1">{a.midText}</p>}
+                  {a.intro && <p className={`mt-3 ${a.introBold ? 'font-semibold text-[#241a2e]' : ''}`}>{a.intro}</p>}
+                  {a.bullets && (
+                    <ul className="mt-1.5 flex flex-col gap-1">
+                      {a.bullets.map((b) => <li key={b} className="before:text-rose relative pl-4 before:absolute before:left-0 before:content-['›']">{b}</li>)}
+                    </ul>
+                  )}
+                  {a.oLines && <div className="mt-3 flex flex-col gap-0.5">{a.oLines.map((l) => <p key={l}>{l}</p>)}</div>}
+                  {a.outroTexts?.map((t, j) => <p key={j} className="mt-3">{t}</p>)}
+                  {a.outroBold && <p className="mt-1 font-semibold text-[#241a2e]">{a.outroBold}</p>}
+                </div>
               </div>
             </Reveal>
           ))}
         </div>
+        <Reveal className="mt-11.5 flex justify-center">
+          <a href="https://inlead.digital/sdwhub" className={btnDark}>
+            QUERO APLICAR PARA O TREINAMENTO →
+          </a>
+        </Reveal>
       </section>
 
       {/* Para quem */}
       <section className="bg-[#f1e3cb] py-24">
         <div className="mx-auto max-w-295 px-7.5">
-          <Reveal className={secIntro}>
+          <Reveal className="mx-auto mb-17.5 max-w-170 text-center">
             <span className={k}>Filtro</span>
             <h2 className={h2}>Para quem é — e para quem não é.</h2>
           </Reveal>
@@ -247,7 +546,7 @@ export default function Page() {
       {/* Treinadores — editorial */}
       <section id="treinadores" className="bg-indigo py-25 text-white">
         <div className="mx-auto max-w-295 px-7.5">
-          <Reveal className={secIntro}>
+          <Reveal className="mx-auto mb-17.5 max-w-170 text-center">
             <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
               Quem vai te treinar
             </span>
@@ -347,6 +646,9 @@ export default function Page() {
           <div className="flex gap-6">
             <a href="#metodo" className="hover:text-rose">
               O Método
+            </a>
+            <a href="#ativos" className="hover:text-rose">
+              Os Ativos
             </a>
             <a href="#treinadores" className="hover:text-rose">
               Treinadores

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 /** Troque pelo seu ID real antes de publicar. */
 export const META_PIXEL_ID = '3969350033332069'; // → seu ID do Meta Pixel
+export const GA4_ID = 'G-B21LPTRGE9'; // → Google Analytics 4
 
 export const SITE_URL = 'https://acesso.sdwhub.com.br';
 export const OG_IMAGE = '/assets/og-acesso.png';
