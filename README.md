@@ -179,3 +179,4 @@ In `assets/`:
 - **`landing-pages/`** — the deliverable UI kit: `index.html` gallery + 5 distinct
   landing-page variations (`v1`…`v5`). Each is a full, responsive, on-brand page.
 # sdwhub-lp-acesso
+# sdw-metodo-acesso
