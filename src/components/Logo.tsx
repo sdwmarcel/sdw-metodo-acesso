@@ -16,6 +16,8 @@ export function Logo({ variant, className }: Props) {
       <img
         src={`/assets/sdw-metodo-acesso-${color}.webp`}
         alt="Método ACESSO — SDW.hub"
+        width={783}
+        height={272}
         className={className}
       />
     );

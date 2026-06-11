@@ -3,7 +3,7 @@ import Link from 'next/link';
 const floatCn =
   'fixed bottom-10 right-10 z-[99999] flex size-[60px] cursor-pointer ' +
   'items-center justify-center rounded-full bg-[#f0c68c] ' +
-  'transition-colors duration-1000 hover:bg-[#f7e2c2] animate-pulse-float';
+  'transition-colors duration-1000 hover:bg-[#f7e2c2]';
 
 const iconCn = 'size-12 scale-[0.6] fill-[#3c165d] pointer-events-none';
 
@@ -15,6 +15,7 @@ export function FloatButton() {
       aria-label="Inlead"
       className={floatCn}
     >
+      <span aria-hidden className="absolute inset-0 rounded-full bg-gold animate-ping-ring" />
       <svg
         className={iconCn}
         xmlns="http://www.w3.org/2000/svg"

@@ -1,10 +1,19 @@
 import type { Metadata, Viewport } from 'next';
+import { Poppins } from 'next/font/google';
 import { Analytics } from '@/components/Analytics';
 import { FloatButton } from '@/components/FloatButton';
 import UtmForwarder from '@/components/UtmForwarder';
 // import { TypebotWidgets } from "@/components/Typebot";
 import { SITE_URL } from '@/lib/site';
 import './globals.css';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  style: ['normal', 'italic'],
+  variable: '--font-poppins',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -23,30 +32,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={poppins.variable}>
       <head>
-        {/* Performance: preload das fontes críticas */}
-        <link
-          rel="preload"
-          href="/fonts/Poppins-ExtraBold.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/Poppins-Regular.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/Poppins-SemiBold.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
         {/* Performance: preload da imagem-herói (LCP) */}
         <link
           rel="preload"
@@ -58,7 +45,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Preconnect dos serviços de terceiros */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://connect.facebook.net" />
       </head>
       {/* suppressHydrationWarning: extensões de browser (Grammarly, LastPass,
           Google Translate etc.) injetam atributos no <body> antes da hydration.

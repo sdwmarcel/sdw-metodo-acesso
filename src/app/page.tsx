@@ -100,6 +100,7 @@ export default function Page() {
                 </h1>
                 <div className={`mt-3 mb-4 block border-b md:hidden ${hairline}`}>
                   <SpeakersImage
+                    priority
                     width={600}
                     height={750}
                     className="h-[36dvh] w-full object-cover object-top"
@@ -420,6 +421,8 @@ export default function Page() {
               <img
                 src="/assets/espaco_evento.jpeg"
                 alt="Espaço do evento Método ACESSO"
+                width={456}
+                height={342}
                 className="h-auto w-full rounded-2xl object-cover"
               />
             </Reveal>
@@ -531,144 +534,6 @@ export default function Page() {
                 </div>
               </Reveal>
 
-              {/* S — Sistema de Aquisição */}
-              <Reveal
-                className={`grid grid-cols-1 items-start gap-9 border-t ${hairline} py-11.5 md:grid-cols-[130px_1fr_1fr]`}
-              >
-                <div className="text-[60px] leading-[0.8] font-extrabold tracking-[-0.03em] text-transparent [-webkit-text-stroke:1.5px_#f0c68c] md:text-[84px]">
-                  S
-                </div>
-                <div>
-                  <span className="text-rose mb-2 block text-xs font-semibold tracking-[0.16em] uppercase">
-                    Sistema de aquisição
-                  </span>
-                  <h3 className="text-[1.55rem] font-semibold tracking-[-0.02em]">
-                    Sistema de Aquisição
-                  </h3>
-                </div>
-                <div className={`text-[1.02rem] leading-[1.6] font-light ${ink2}`}>
-                  <p>Empresa que depende de um único canal vive em risco.</p>
-                  <p className="mt-3 font-semibold text-[#fdfbf7]">Indicação é ótima.</p>
-                  <p className="mt-2">Mas indicação sem estratégia é instável.</p>
-                  <p className={`mt-4 font-light ${ink2}`}>
-                    Você vai aprender como pensar em canais de aquisição além do improviso:
-                  </p>
-                  <ul className="mt-2 flex flex-col gap-1.5">
-                    {[
-                      'conteúdo',
-                      'parcerias',
-                      'eventos',
-                      'relacionamento',
-                      'tráfego',
-                      'base própria',
-                      'comunidade',
-                      'indicação estruturada',
-                    ].map((b) => (
-                      <li
-                        key={b}
-                        className={`before:text-gold relative pl-4.5 before:absolute before:left-0 before:content-['›']`}
-                      >
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-4">A pergunta não é apenas "como vender mais?".</p>
-                  <p className="mt-2">A pergunta é:</p>
-                  <p className="mt-1 font-semibold text-[#fdfbf7]">
-                    quais canais sua empresa precisa construir para parar de depender da sorte?
-                  </p>
-                </div>
-              </Reveal>
-
-              {/* S — Social Proof, Reputação e Confiança */}
-              <Reveal
-                className={`grid grid-cols-1 items-start gap-9 border-t ${hairline} py-11.5 md:grid-cols-[130px_1fr_1fr]`}
-              >
-                <div className="text-[60px] leading-[0.8] font-extrabold tracking-[-0.03em] text-transparent [-webkit-text-stroke:1.5px_#f0c68c] md:text-[84px]">
-                  S
-                </div>
-                <div>
-                  <span className="text-rose mb-2 block text-xs font-semibold tracking-[0.16em] uppercase">
-                    Social proof e reputação
-                  </span>
-                  <h3 className="text-[1.55rem] font-semibold tracking-[-0.02em]">
-                    Social Proof, Reputação e Confiança
-                  </h3>
-                </div>
-                <div className={`text-[1.02rem] leading-[1.6] font-light ${ink2}`}>
-                  <p>Quanto maior o ticket, maior a necessidade de confiança.</p>
-                  <p className="mt-3">
-                    O cliente precisa de provas para acreditar que sua empresa é a escolha certa.
-                  </p>
-                  <p className={`mt-4 font-light ${ink2}`}>
-                    Você vai aprender a organizar e usar melhor:
-                  </p>
-                  <ul className="mt-2 flex flex-col gap-1.5">
-                    {[
-                      'cases',
-                      'depoimentos',
-                      'números',
-                      'histórias de clientes',
-                      'bastidores',
-                      'autoridade',
-                      'reputação',
-                      'provas de entrega',
-                    ].map((b) => (
-                      <li
-                        key={b}
-                        className={`before:text-gold relative pl-4.5 before:absolute before:left-0 before:content-['›']`}
-                      >
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-4">
-                    Porque quanto menos prova você mostra, mais desconto o cliente pede.
-                  </p>
-                </div>
-              </Reveal>
-
-              {/* O — Oportunidades por Comunidade e Eventos */}
-              <Reveal
-                className={`grid grid-cols-1 items-start gap-9 border-t ${hairline} py-11.5 md:grid-cols-[130px_1fr_1fr]`}
-              >
-                <div className="text-[60px] leading-[0.8] font-extrabold tracking-[-0.03em] text-transparent [-webkit-text-stroke:1.5px_#f0c68c] md:text-[84px]">
-                  O
-                </div>
-                <div>
-                  <span className="text-rose mb-2 block text-xs font-semibold tracking-[0.16em] uppercase">
-                    Oportunidades por comunidade e eventos
-                  </span>
-                  <h3 className="text-[1.55rem] font-semibold tracking-[-0.02em]">
-                    Oportunidades por Comunidade e Eventos
-                  </h3>
-                </div>
-                <div className={`text-[1.02rem] leading-[1.6] font-light ${ink2}`}>
-                  <p>Nem todo crescimento nasce de campanha.</p>
-                  <p className="mt-3">Muito crescimento nasce de uma conversa certa.</p>
-                  <div className={`mt-4 flex flex-col gap-1 ${ink2}`}>
-                    {[
-                      'Uma indicação.',
-                      'Uma parceria.',
-                      'Um evento.',
-                      'Uma comunidade.',
-                      'Uma mesa.',
-                      'Um relacionamento que abre uma nova porta.',
-                    ].map((line) => (
-                      <p key={line}>{line}</p>
-                    ))}
-                  </div>
-                  <p className="mt-4">
-                    Você vai entender como ambientes, comunidades e eventos podem se tornar canais
-                    estratégicos de crescimento.
-                  </p>
-                  <p className="mt-3">
-                    Porque a oportunidade que você procura talvez esteja em uma conversa que você
-                    ainda não teve.
-                  </p>
-                </div>
-              </Reveal>
-
               {/* E — Exposição Estratégica do Founder */}
               <Reveal
                 className={`grid grid-cols-1 items-start gap-9 border-t border-b ${hairline} py-11.5 md:grid-cols-[130px_1fr_1fr]`}
@@ -702,6 +567,144 @@ export default function Page() {
                 </div>
               </Reveal>
             </div>
+
+            {/* S — Sistema de Aquisição */}
+            <Reveal
+              className={`grid grid-cols-1 items-start gap-9 border-t ${hairline} py-11.5 md:grid-cols-[130px_1fr_1fr]`}
+            >
+              <div className="text-[60px] leading-[0.8] font-extrabold tracking-[-0.03em] text-transparent [-webkit-text-stroke:1.5px_#f0c68c] md:text-[84px]">
+                S
+              </div>
+              <div>
+                <span className="text-rose mb-2 block text-xs font-semibold tracking-[0.16em] uppercase">
+                  Sistema de aquisição
+                </span>
+                <h3 className="text-[1.55rem] font-semibold tracking-[-0.02em]">
+                  Sistema de Aquisição
+                </h3>
+              </div>
+              <div className={`text-[1.02rem] leading-[1.6] font-light ${ink2}`}>
+                <p>Empresa que depende de um único canal vive em risco.</p>
+                <p className="mt-3 font-semibold text-[#fdfbf7]">Indicação é ótima.</p>
+                <p className="mt-2">Mas indicação sem estratégia é instável.</p>
+                <p className={`mt-4 font-light ${ink2}`}>
+                  Você vai aprender como pensar em canais de aquisição além do improviso:
+                </p>
+                <ul className="mt-2 flex flex-col gap-1.5">
+                  {[
+                    'conteúdo',
+                    'parcerias',
+                    'eventos',
+                    'relacionamento',
+                    'tráfego',
+                    'base própria',
+                    'comunidade',
+                    'indicação estruturada',
+                  ].map((b) => (
+                    <li
+                      key={b}
+                      className={`before:text-gold relative pl-4.5 before:absolute before:left-0 before:content-['›']`}
+                    >
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4">A pergunta não é apenas "como vender mais?".</p>
+                <p className="mt-2">A pergunta é:</p>
+                <p className="mt-1 font-semibold text-[#fdfbf7]">
+                  quais canais sua empresa precisa construir para parar de depender da sorte?
+                </p>
+              </div>
+            </Reveal>
+
+            {/* S — Social Proof, Reputação e Confiança */}
+            <Reveal
+              className={`grid grid-cols-1 items-start gap-9 border-t ${hairline} py-11.5 md:grid-cols-[130px_1fr_1fr]`}
+            >
+              <div className="text-[60px] leading-[0.8] font-extrabold tracking-[-0.03em] text-transparent [-webkit-text-stroke:1.5px_#f0c68c] md:text-[84px]">
+                S
+              </div>
+              <div>
+                <span className="text-rose mb-2 block text-xs font-semibold tracking-[0.16em] uppercase">
+                  Social proof e reputação
+                </span>
+                <h3 className="text-[1.55rem] font-semibold tracking-[-0.02em]">
+                  Social Proof, Reputação e Confiança
+                </h3>
+              </div>
+              <div className={`text-[1.02rem] leading-[1.6] font-light ${ink2}`}>
+                <p>Quanto maior o ticket, maior a necessidade de confiança.</p>
+                <p className="mt-3">
+                  O cliente precisa de provas para acreditar que sua empresa é a escolha certa.
+                </p>
+                <p className={`mt-4 font-light ${ink2}`}>
+                  Você vai aprender a organizar e usar melhor:
+                </p>
+                <ul className="mt-2 flex flex-col gap-1.5">
+                  {[
+                    'cases',
+                    'depoimentos',
+                    'números',
+                    'histórias de clientes',
+                    'bastidores',
+                    'autoridade',
+                    'reputação',
+                    'provas de entrega',
+                  ].map((b) => (
+                    <li
+                      key={b}
+                      className={`before:text-gold relative pl-4.5 before:absolute before:left-0 before:content-['›']`}
+                    >
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4">
+                  Porque quanto menos prova você mostra, mais desconto o cliente pede.
+                </p>
+              </div>
+            </Reveal>
+
+            {/* O — Oportunidades por Comunidade e Eventos */}
+            <Reveal
+              className={`grid grid-cols-1 items-start gap-9 border-t ${hairline} py-11.5 md:grid-cols-[130px_1fr_1fr]`}
+            >
+              <div className="text-[60px] leading-[0.8] font-extrabold tracking-[-0.03em] text-transparent [-webkit-text-stroke:1.5px_#f0c68c] md:text-[84px]">
+                O
+              </div>
+              <div>
+                <span className="text-rose mb-2 block text-xs font-semibold tracking-[0.16em] uppercase">
+                  Oportunidades por comunidade e eventos
+                </span>
+                <h3 className="text-[1.55rem] font-semibold tracking-[-0.02em]">
+                  Oportunidades por Comunidade e Eventos
+                </h3>
+              </div>
+              <div className={`text-[1.02rem] leading-[1.6] font-light ${ink2}`}>
+                <p>Nem todo crescimento nasce de campanha.</p>
+                <p className="mt-3">Muito crescimento nasce de uma conversa certa.</p>
+                <div className={`mt-4 flex flex-col gap-1 ${ink2}`}>
+                  {[
+                    'Uma indicação.',
+                    'Uma parceria.',
+                    'Um evento.',
+                    'Uma comunidade.',
+                    'Uma mesa.',
+                    'Um relacionamento que abre uma nova porta.',
+                  ].map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </div>
+                <p className="mt-4">
+                  Você vai entender como ambientes, comunidades e eventos podem se tornar canais
+                  estratégicos de crescimento.
+                </p>
+                <p className="mt-3">
+                  Porque a oportunidade que você procura talvez esteja em uma conversa que você
+                  ainda não teve.
+                </p>
+              </div>
+            </Reveal>
 
             <Reveal className="mt-13.5 flex justify-center">
               <a
@@ -896,8 +899,8 @@ export default function Page() {
                 Inscreva-se gratuitamente no Método ACESSO.
               </h2>
               <p className="mt-5.5 text-[1.1rem] font-light text-white/85">
-                Uma imersão para empresários que querem transformar margem, posicionamento, aquisição
-                e relacionamento em crescimento real.
+                Uma imersão para empresários que querem transformar margem, posicionamento,
+                aquisição e relacionamento em crescimento real.
               </p>
             </div>
             <CtaDeadline btnClassName={`${btnPrimary} px-8.5 text-[16px]`} />
