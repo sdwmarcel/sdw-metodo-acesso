@@ -159,10 +159,10 @@ export default function Page() {
         </main>
 
         {/* Seção 2 — Conquistas */}
-        <section className="bg-gold-soft w-full py-24">
+        <section className="from-gold/30 via-gold-deep/30 w-full bg-linear-to-r to-transparent py-20">
           <div className="mx-auto grid max-w-285 items-center gap-12 px-7 md:grid-cols-2">
             <Reveal>
-              <h2 className="text-indigo text-[clamp(1.8rem,3.4vw,2.6rem)] leading-tight font-bold tracking-[-0.02em]">
+              <h2 className="text-[clamp(1.8rem,3.6vw,2.8rem)] leading-tight font-extrabold tracking-[-0.03em]">
                 Sua empresa cresceu até aqui
               </h2>
             </Reveal>
@@ -176,11 +176,8 @@ export default function Page() {
                   'Sobreviveu a fases difíceis.',
                   'Aprendeu na prática.',
                 ].map((p) => (
-                  <li
-                    key={p}
-                    className="text-indigo flex items-start gap-3 text-[1.06rem] font-medium"
-                  >
-                    <CheckIcon className="text-purple-dark mt-0.5 size-5 shrink-0" />
+                  <li key={p} className="flex items-start gap-3 text-[1.06rem] font-medium">
+                    <CheckIcon className="text-gold-soft mt-0.5 size-5 shrink-0" />
                     {p}
                   </li>
                 ))}
@@ -193,7 +190,7 @@ export default function Page() {
         <section className="w-full py-24">
           <div className="mx-auto grid max-w-285 items-center gap-12 px-7 md:grid-cols-2">
             <Reveal>
-              <p className="text-[clamp(1.6rem,3vw,2.3rem)] leading-tight font-semibold tracking-[-0.02em]">
+              <p className="text-[clamp(1.8rem,3.6vw,2.8rem)] leading-tight font-extrabold tracking-[-0.03em]">
                 Mas agora existe uma sensação incômoda:{' '}
                 <em className="text-gold not-italic">o crescimento ficou mais pesado.</em>
               </p>
@@ -222,9 +219,9 @@ export default function Page() {
 
         {/* Seção 4 — Transição */}
         <section className={`border-t ${hairline} py-20`}>
-          <div className="mx-auto max-w-195 px-7 text-center">
+          <div className="mx-auto max-w-5xl px-7 text-center">
             <Reveal>
-              <p className="text-[clamp(1.25rem,2.5vw,1.65rem)] leading-[1.4] font-bold tracking-[-0.02em]">
+              <p className="text-[clamp(1.8rem,3.6vw,2.8rem)] leading-tight font-extrabold tracking-[-0.03em]">
                 E, mesmo vendendo, percebe que poderia ter mais margem, mais clareza e mais força no
                 mercado.
               </p>
@@ -258,7 +255,7 @@ export default function Page() {
         <section className="bg-[linear-gradient(165deg,rgba(73,43,146,0.35)_0%,rgba(60,22,93,0.18)_100%)] py-24">
           <div className="mx-auto max-w-285 px-7">
             <Reveal className="mb-11">
-              <h2 className="text-[clamp(1.7rem,3.4vw,2.6rem)] leading-[1.15] font-bold tracking-[-0.02em]">
+              <h2 className="text-center text-[clamp(1.8rem,3.6vw,2.8rem)] leading-tight font-extrabold tracking-[-0.03em]">
                 Chega uma hora em que crescer exige outra estrutura.
               </h2>
             </Reveal>
@@ -402,7 +399,7 @@ export default function Page() {
         <section id="metodo" className="mx-auto max-w-285 px-7 py-24">
           <div className="grid items-center gap-12 md:grid-cols-2">
             <Reveal>
-              <h2 className="text-[clamp(1.7rem,3.2vw,2.4rem)] leading-[1.15] font-bold tracking-[-0.02em]">
+              <h2 className="text-[clamp(1.8rem,3.6vw,2.8rem)] leading-tight font-extrabold tracking-[-0.03em]">
                 O que é o Método A.C.E.S.S.O.
               </h2>
               <p className={`mt-5 text-[1.05rem] leading-[1.65] font-light ${ink2}`}>
@@ -419,7 +416,7 @@ export default function Page() {
             <Reveal className="overflow-hidden rounded-2xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/espaco_evento.jpeg"
+                src="/assets/pessoas.jpg"
                 alt="Espaço do evento Método ACESSO"
                 width={456}
                 height={342}
@@ -831,7 +828,7 @@ export default function Page() {
               <span className="text-gold text-xs font-semibold tracking-[0.22em] uppercase">
                 O que você vai levar do treinamento?
               </span>
-              <h2 className="mt-4 text-[clamp(1.9rem,3.8vw,2.9rem)] leading-[1.1] font-bold tracking-tight">
+              <h2 className="mt-4 text-[clamp(1.8rem,3.6vw,2.8rem)] leading-tight font-extrabold tracking-[-0.03em]">
                 Mais clareza sobre o seu próximo passo.
               </h2>
             </Reveal>
@@ -859,7 +856,7 @@ export default function Page() {
         <section className={`border-t ${hairline}`}>
           <div className="mx-auto max-w-285 px-7 py-20">
             <Reveal className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-20">
-              <p className="text-[clamp(1.4rem,2.8vw,2.1rem)] leading-tight font-bold tracking-[-0.02em]">
+              <p className="text-[clamp(1.8rem,3.6vw,2.8rem)] leading-tight font-extrabold tracking-[-0.03em]">
                 O crescimento da sua empresa pode não estar em trabalhar mais.
               </p>
               <ul className="flex flex-col gap-4">
@@ -885,25 +882,58 @@ export default function Page() {
         </section>
 
         {/* Final CTA */}
-        <section
-          id="aplicar"
-          className="mx-7 my-10 overflow-hidden rounded-[36px] px-8 py-22.5"
-          style={{
-            background:
-              'linear-gradient(115deg,#3c165d 0%,#492b92 30%,#6c2164 60%,#843558 80%,#0f96ab 130%)',
-          }}
-        >
-          <div className="grid items-center gap-12 md:grid-cols-2">
-            <div className="text-center md:text-left">
-              <h2 className="text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.06] font-extrabold tracking-[-0.03em]">
-                Inscreva-se gratuitamente no Método ACESSO.
-              </h2>
-              <p className="mt-5.5 text-[1.1rem] font-light text-white/85">
-                Uma imersão para empresários que querem transformar margem, posicionamento,
-                aquisição e relacionamento em crescimento real.
-              </p>
+        <section className="px-6">
+          <div
+            id="aplicar"
+            className="mx-auto my-10 max-w-4xl overflow-hidden rounded-[36px] px-8 py-16 sm:max-w-6xl"
+            style={{
+              background:
+                'linear-gradient(115deg,#3c165d 0%,#492b92 30%,#6c2164 60%,#843558 80%,#0f96ab 130%)',
+            }}
+          >
+            <div className="grid items-center gap-12 md:grid-cols-2">
+              <div className="text-center md:text-left">
+                <span className="mb-4 inline-flex items-center rounded-lg bg-white/15 px-3.5 py-1.5 text-[11px] font-bold tracking-[0.2em] text-white uppercase">
+                  Oportunidade única
+                </span>
+                <h2 className="text-[clamp(1.8rem,3.6vw,2.8rem)] leading-tight font-extrabold tracking-[-0.03em]">
+                  Inscreva-se gratuitamente no Método ACESSO.
+                </h2>
+                <p className="mt-5.5 text-[1.1rem] font-light text-white/85">
+                  Uma imersão para empresários que querem transformar margem, posicionamento,
+                  aquisição e relacionamento em crescimento real.
+                </p>
+              </div>
+              <CtaDeadline btnClassName={`${btnPrimary} px-8.5 text-[16px]`} />
             </div>
-            <CtaDeadline btnClassName={`${btnPrimary} px-8.5 text-[16px]`} />
+          </div>
+        </section>
+
+        {/* Local do evento */}
+        <section className="from-gold/30 via-gold-deep/30 w-full bg-linear-to-r to-transparent py-20">
+          <div className="mx-auto max-w-285 px-7">
+            <Reveal className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
+              <div>
+                <h2 className="text-[clamp(1.8rem,3.6vw,2.8rem)] leading-tight font-extrabold tracking-[-0.03em] text-white/85">
+                  Onde será o treinamento?
+                </h2>
+                <div className="mt-6 flex flex-col gap-2 text-[1.02rem] leading-[1.6] text-white/70">
+                  <p className="font-semibold text-white/85">26 de junho | das 9h às 13h</p>
+                  <p className="font-semibold text-white/85">SMART Center</p>
+                  <p className="text-white/70">R. José Caballero, 15 – Gonzaga, Santos – SP</p>
+                </div>
+              </div>
+              <div className="overflow-hidden rounded-2xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/assets/espaco_evento.jpeg"
+                  alt="SMART Center — local do evento Método ACESSO"
+                  width={456}
+                  height={342}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            </Reveal>
           </div>
         </section>
 
