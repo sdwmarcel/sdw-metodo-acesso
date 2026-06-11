@@ -144,11 +144,11 @@ export const SPEAKERS_IMG = {
 };
 
 export const SPEAKERS_IMG_LARA = {
-  src: "/assets/lara.jpg",
+  src: "/assets/lara.webp",
   alt: "Lara Finochio",
 };
 
 export const SPEAKERS_IMG_MARCEL = {
-  src: "/assets/marcel.jpg",
+  src: "/assets/marcel.webp",
   alt: "Marcel Roxo",
 };

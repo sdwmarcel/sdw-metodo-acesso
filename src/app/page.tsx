@@ -60,9 +60,9 @@ export default function Page() {
         <header
           className={`sticky top-0 z-50 border-b ${hairline} bg-[rgba(15,14,34,0.6)] backdrop-blur-[14px]`}
         >
-          <nav className="mx-auto flex max-w-285 items-center justify-between px-7 py-4">
+          <nav className="mx-auto flex max-w-285 items-center justify-between px-7 py-3 md:py-4">
             <a href="#" aria-label="SDW.hub — início">
-              <Logo variant="acesso-branco" className="h-16 w-auto" />
+              <Logo variant="acesso-branco" className="h-9 w-auto md:h-16" />
             </a>
             <div className={`hidden gap-8 text-sm font-medium ${ink2} md:flex`}>
               <a href="#metodo" className="hover:text-gold">
@@ -78,7 +78,10 @@ export default function Page() {
                 Dúvidas
               </a>
             </div>
-            <a href="https://inlead.digital/sdwhub" className={btnPrimary}>
+            <a
+              href="https://inlead.digital/sdwhub"
+              className="rounded-pill bg-gold text-purple-dark shadow-gold ease-brand hover:bg-gold-soft inline-flex items-center gap-2 px-4 py-2 text-[12px] font-semibold transition duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] md:px-7 md:py-3.5 md:text-[14.5px]"
+            >
               QUERO APLICAR
             </a>
           </nav>
@@ -416,7 +419,7 @@ export default function Page() {
             <Reveal className="overflow-hidden rounded-2xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/pessoas.jpg"
+                src="/assets/pessoas.webp"
                 alt="Espaço do evento Método ACESSO"
                 width={456}
                 height={342}
@@ -926,7 +929,7 @@ export default function Page() {
               <div className="overflow-hidden rounded-2xl">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/assets/espaco_evento.jpeg"
+                  src="/assets/espaco_evento.webp"
                   alt="SMART Center — local do evento Método ACESSO"
                   width={456}
                   height={342}
@@ -973,7 +976,7 @@ export default function Page() {
               </a>
             </div>
             <div className={`mt-2 w-full text-[12.5px] ${ink3}`}>
-              © 2026 Método ACESSO · uma iniciativa SDW.hub — Marcel Roxo &amp; Lara Finochio.
+              © 2026 Método ACESSO · uma iniciativa SDW.hub — Roxo Treinamentos.
             </div>
           </div>
         </footer>

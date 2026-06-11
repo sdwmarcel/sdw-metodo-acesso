@@ -188,9 +188,9 @@ export default function Page() {
       <header
         className={`sticky top-0 z-50 border-b ${line} bg-[rgba(37,10,22,0.7)] backdrop-blur-md`}
       >
-        <nav className="mx-auto flex max-w-300 items-center justify-between px-7 py-4">
+        <nav className="mx-auto flex max-w-300 items-center justify-between px-7 py-3 md:py-4">
           <a href="#" aria-label="SDW.hub — início">
-            <Logo variant="acesso-branco" className="h-16 w-auto" />
+            <Logo variant="acesso-branco" className="h-9 w-auto md:h-16" />
           </a>
           <div className="flex items-center gap-5.5">
             <span
@@ -200,7 +200,7 @@ export default function Page() {
             </span>
             <a
               href="https://inlead.digital/sdwhub"
-              className={`${btnGold} rounded-pill px-5 py-2.5 text-sm`}
+              className="inline-flex items-center gap-2 rounded-pill bg-gold px-4 py-2 text-[12px] font-semibold text-purple-dark shadow-gold transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-gold-soft active:scale-[0.98] md:px-5 md:py-2.5 md:text-sm"
             >
               QUERO APLICAR
             </a>
@@ -231,6 +231,7 @@ export default function Page() {
             </Reveal>
             <div className={`mt-3 mb-4 block border-b md:hidden ${line}`}>
               <SpeakersImage
+                priority
                 width={600}
                 height={750}
                 className="h-[36dvh] w-full object-cover object-top"
@@ -546,8 +547,10 @@ export default function Page() {
           <Reveal className="overflow-hidden rounded-[18px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/espaco_evento.jpeg"
+              src="/assets/espaco_evento.webp"
               alt="Espaço do evento Método ACESSO"
+              width={456}
+              height={342}
               className="h-auto w-full rounded-[18px] object-cover"
             />
           </Reveal>
@@ -747,6 +750,9 @@ export default function Page() {
             aria-hidden
             className="absolute top-1/2 -right-5 size-10 -translate-y-1/2 rounded-full bg-[#250a16]"
           />
+          <span className="mb-3 inline-flex items-center rounded-lg bg-purple-dark/10 px-3.5 py-1.5 text-[11px] font-bold tracking-[0.2em] text-purple-dark uppercase">
+            Oportunidade única
+          </span>
           <div className="text-[13px] font-bold tracking-[0.2em] uppercase opacity-65">
             Vagas gratuitas · aplicação
           </div>
@@ -763,6 +769,34 @@ export default function Page() {
             QUERO APLICAR PARA O TREINAMENTO →
           </a>
         </Reveal>
+      </section>
+
+      {/* Local do evento */}
+      <section className="w-full bg-[#f4e7d2] py-20">
+        <div className="mx-auto max-w-285 px-7">
+          <Reveal className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
+            <div>
+              <h2 className="text-[clamp(1.8rem,3.6vw,2.8rem)] leading-tight font-extrabold tracking-[-0.03em] text-[#1b193c]">
+                Onde será o treinamento?
+              </h2>
+              <div className="mt-6 flex flex-col gap-2 text-[1.02rem] leading-[1.6] text-[#1b193c]/70">
+                <p className="font-semibold text-[#1b193c]">26 de junho | das 9h às 13h</p>
+                <p className="font-semibold text-[#1b193c]">SMART Center</p>
+                <p>R. José Caballero, 15 – Gonzaga, Santos – SP</p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-[18px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/espaco_evento.webp"
+                alt="SMART Center — local do evento Método ACESSO"
+                width={456}
+                height={342}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* Footer */}

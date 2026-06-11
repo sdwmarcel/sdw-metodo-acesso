@@ -119,9 +119,9 @@ export default function Page() {
       <JsonLd data={courseJsonLd('/v5', DESC)} />
 
       <header className="border-line sticky top-0 z-50 border-b bg-[rgba(246,239,230,0.82)] backdrop-blur-md">
-        <nav className="mx-auto flex max-w-295 items-center justify-between px-7.5 py-4">
+        <nav className="mx-auto flex max-w-295 items-center justify-between px-7.5 py-3 md:py-4">
           <a href="#" aria-label="SDW.hub — início">
-            <Logo variant="acesso-preto" className="h-16 w-auto" />
+            <Logo variant="acesso-preto" className="h-9 w-auto md:h-16" />
           </a>
           <div className="hidden gap-7.5 text-sm font-medium text-[#5f5168] md:flex">
             <a href="#metodo" className="hover:text-rose">
@@ -137,7 +137,10 @@ export default function Page() {
               Dúvidas
             </a>
           </div>
-          <a href="https://inlead.digital/sdwhub" className={`${btnDark} px-5.5 py-2.75 text-sm`}>
+          <a
+            href="https://inlead.digital/sdwhub"
+            className="inline-flex items-center gap-2 rounded-pill bg-indigo px-4 py-2 text-[12px] font-semibold text-gold shadow-[0_12px_30px_rgba(27,25,60,0.22)] transition duration-300 ease-brand hover:-translate-y-0.5 hover:bg-[#2a2750] active:scale-[0.98] md:px-5.5 md:py-2.75 md:text-sm"
+          >
             QUERO APLICAR
           </a>
         </nav>
@@ -163,6 +166,7 @@ export default function Page() {
             </Reveal>
             <div className="grad-brand mt-3 mb-4 block h-[38dvh] overflow-hidden rounded-3xl md:hidden">
               <SpeakersImage
+                priority
                 width={600}
                 height={750}
                 className="h-full w-full object-cover object-top"
@@ -445,8 +449,10 @@ export default function Page() {
           <Reveal className="overflow-hidden rounded-[18px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/espaco_evento.jpeg"
+              src="/assets/espaco_evento.webp"
               alt="Espaço do evento Método ACESSO"
+              width={456}
+              height={342}
               className="h-auto w-full rounded-[18px] object-cover"
             />
           </Reveal>
@@ -625,6 +631,9 @@ export default function Page() {
 
       {/* Final */}
       <section id="aplicar" className="grad-brand px-7.5 py-24 text-center text-white">
+        <span className="mb-4 inline-flex items-center rounded-lg bg-white/15 px-3.5 py-1.5 text-[11px] font-bold tracking-[0.2em] text-white uppercase">
+          Oportunidade única
+        </span>
         <h2 className="mx-auto max-w-190 text-[clamp(2.1rem,4.8vw,3.6rem)] leading-[1.04] font-extrabold tracking-[-0.03em]">
           Inscreva-se gratuitamente no Método ACESSO.
         </h2>
@@ -637,6 +646,34 @@ export default function Page() {
         >
           QUERO APLICAR PARA O TREINAMENTO →
         </a>
+      </section>
+
+      {/* Local do evento */}
+      <section className="w-full bg-[#f4e7d2] py-20">
+        <div className="mx-auto max-w-285 px-7.5">
+          <Reveal className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
+            <div>
+              <h2 className="text-[clamp(1.8rem,3.6vw,2.8rem)] leading-tight font-extrabold tracking-[-0.03em] text-[#2d1f36]">
+                Onde será o treinamento?
+              </h2>
+              <div className="mt-6 flex flex-col gap-2 text-[1.02rem] leading-[1.6] text-[#5f5168]">
+                <p className="font-semibold text-[#2d1f36]">26 de junho | das 9h às 13h</p>
+                <p className="font-semibold text-[#2d1f36]">SMART Center</p>
+                <p>R. José Caballero, 15 – Gonzaga, Santos – SP</p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-[18px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/espaco_evento.webp"
+                alt="SMART Center — local do evento Método ACESSO"
+                width={456}
+                height={342}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* Footer */}
