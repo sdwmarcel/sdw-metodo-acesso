@@ -79,7 +79,7 @@ export default function Page() {
               </a>
             </div>
             <a
-              href="https://inlead.digital/sdwhub"
+              href="#aplicar"
               className="rounded-pill bg-gold text-purple-dark shadow-gold ease-brand hover:bg-gold-soft inline-flex items-center gap-2 px-4 py-2 text-[12px] font-semibold transition duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] md:px-7 md:py-3.5 md:text-[14.5px]"
             >
               QUERO APLICAR
@@ -119,7 +119,7 @@ export default function Page() {
                   crescer mais, vender melhor e construir uma empresa mais desejada pelo mercado.
                 </p>
                 <div className="mt-4 flex flex-wrap justify-center gap-3.5 md:mt-8 md:justify-start">
-                  <a href="https://inlead.digital/sdwhub" className={btnPrimary}>
+                  <a href="#aplicar" className={btnPrimary}>
                     QUERO APLICAR PARA O TREINAMENTO
                   </a>
                 </div>
@@ -235,7 +235,7 @@ export default function Page() {
                 Talvez sua empresa só tenha chegado no limite do crescimento por esforço.
               </p>
               <div className="mt-9 flex justify-center">
-                <a href="https://inlead.digital/sdwhub" className={btnPrimary}>
+                <a href="#aplicar" className={btnPrimary}>
                   QUERO APLICAR PARA O TREINAMENTO
                 </a>
               </div>
@@ -707,10 +707,7 @@ export default function Page() {
             </Reveal>
 
             <Reveal className="mt-13.5 flex justify-center">
-              <a
-                href="https://inlead.digital/sdwhub"
-                className={`${btnPrimary} px-8.5 text-[16px]`}
-              >
+              <a href="#aplicar" className={`${btnPrimary} px-8.5 text-[16px]`}>
                 QUERO APLICAR PARA O TREINAMENTO →
               </a>
             </Reveal>
@@ -846,7 +843,7 @@ export default function Page() {
               ))}
             </Reveal>
             <Reveal className="mt-10 flex justify-center">
-              <a href="https://inlead.digital/sdwhub" className={btnPrimary}>
+              <a href="#aplicar" className={btnPrimary}>
                 QUERO APLICAR PARA O TREINAMENTO
               </a>
             </Reveal>
@@ -971,7 +968,7 @@ export default function Page() {
               <a href="#treinadores" className="hover:text-gold">
                 Treinadores
               </a>
-              <a href="https://inlead.digital/sdwhub" className="hover:text-gold">
+              <a href="#aplicar" className="hover:text-gold">
                 Aplicar
               </a>
             </div>
